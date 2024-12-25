@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    background-image: url(public/bg.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(0.8px); /* Adjust the blur value as needed */
+    opacity: 0.7; /* Adjust the opacity value as needed */
+}
+
