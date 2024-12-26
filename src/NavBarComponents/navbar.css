@@ -1,0 +1,23 @@
+.navbar {
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the opacity as needed */
+}
+
+.nav{
+    text-align:justify;
+    padding: 0 30px;
+    font-size: 25px;
+}
+
+.nav.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight active link */
+    color: #000; /* Active link color */
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}

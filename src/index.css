@@ -13,11 +13,20 @@ body {
     position: fixed;
     inset: 0;
     z-index: -5;
-    background-image: url(public/bg.avif);
+    background-image: url('/bg.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(0.8px); /* Adjust the blur value as needed */
-    opacity: 0.7; /* Adjust the opacity value as needed */
+    filter: blur(1.8px); /* Adjust the blur value as needed */
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
 }
 
+.content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh; /* Ensure content takes at least the full viewport height */
+}
+html{
+    scroll-behavior: smooth;
+    margin-top: 65px;
+}
