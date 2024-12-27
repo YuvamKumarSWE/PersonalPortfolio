@@ -26,7 +26,8 @@ body {
     z-index: 1;
     min-height: 100vh; /* Ensure content takes at least the full viewport height */
 }
-html{
+
+html {
     scroll-behavior: smooth;
     margin-top: 65px;
 }
