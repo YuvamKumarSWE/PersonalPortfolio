@@ -22,7 +22,7 @@ export default function Nav() {
             <div className={`nav-links ${isOpen ? 'show' : ''}`}>
                 <NavLink to="/" className={({ isActive }) => isActive ? "nav active" : "nav"}>About</NavLink>
                 <NavLink to="/projects" className={({ isActive }) => isActive ? "nav active" : "nav"}>Projects</NavLink>
-                <NavLink to="/contact" className={({ isActive }) => isActive ? "nav active" : "nav"}>Contact</NavLink>
+                <a href="https://drive.google.com/file/d/1YEK2r_gsHzi5-QtDbPgUpI4qfjrBp3p-/view?usp=sharing"> <p className="nav">Resume</p> </a> 
             </div>
         </div>
     );
