@@ -11,6 +11,7 @@ export default {
 		fontFamily: {
   			orbitron: ['Orbitron', 'sans-serif'],
 		   	roboto: ['Roboto', 'sans-serif'],
+			noto: ['Noto Znamenny Musical Notation', 'sans-serif'],
 
   		},
 
