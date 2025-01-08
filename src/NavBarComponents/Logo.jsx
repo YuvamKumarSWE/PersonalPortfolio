@@ -1,10 +1,13 @@
-import './navbar.css'
+import './navbar.css';
 
 export default function Logo() {
     return (
-        <div className="flex items-center space-x-4 justify-evenly ml-[2%]">
-            <img src="public/yk.png" alt="" className="logo-image" />
-            <h1 className="name">Yuvam Kumar</h1>
-        </div>
-    )
+        <>
+            
+            {/* Logo and name */}
+            <div className="flex items-center space-x-6 justify-evenly ml-[2%]">
+                <h1 className="name font-orbitron">Yuvam Kumar</h1>
+            </div>
+        </>
+    );
 }

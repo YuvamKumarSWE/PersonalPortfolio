@@ -4,40 +4,41 @@ import Skill from "./Skill";
 export default function LandingPage() {
 
     const slugs = [
-        "typescript",
-        "javascript",
-        "react",
-        "npm",
-        "java",
-        "react",
-        "android",
-        "html5",
-        "css3",
-        "nodedotjs",
-        "express",
-        "amazonaws",
-        "postgresql",
-        "firebase",
-        "netlify",
-        "tailwindcss",
-        "testinglibrary",
-        "docker",
-        "git",
-        "github",
-        "visualstudiocode",
-        "figma",
-        "python",
-        "c",
-        "apple",
-        "spring",
-        "springboot",
-        "pandas",
-        "scikit-learn",
-        "numpy",
+      "typescript",
+      "javascript",
+      "react",
+      "npm",
+      "java",
+      "react",
+      "android",
+      "html5",
+      "css3",
+      "nodedotjs",
+      "amazonaws",
+      "postgresql",
+      "netlify",
+      "tailwindcss",
+      "testinglibrary",
+      "git",
+      "github",
+      "visualstudiocode",
+      "figma",
+      "python",
+      "c",
+      "apple",
+      "spring",
+      "springboot",
+      "pandas",
+      "scikit-learn",
+      "numpy",
+        "oracle",
       ];
 
     return (
       <>
+    
+
+
         <div className="flex flex-row items-center justify-center mt-[2%] ">
           <div className="">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-20">
@@ -68,28 +69,20 @@ export default function LandingPage() {
   
                 {/* Social Links */}
                 <div className="flex justify-center md:justify-start space-x-6 mt-6">
-                  <a href="https://github.com" className="text-gray-500 hover:text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-7 w-7"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C6.477 2 2 6.486 2 12c0 4.418 2.865 8.167 6.839 9.489.5.093.683-.217.683-.482v-1.695c-2.781.603-3.369-1.343-3.369-1.343-.454-1.15-1.11-1.457-1.11-1.457-.908-.621.069-.609.069-.609 1.003.07 1.532 1.03 1.532 1.03.892 1.528 2.341 1.087 2.91.831.09-.647.35-1.088.636-1.338-2.22-.254-4.555-1.114-4.555-4.97 0-1.097.39-1.994 1.03-2.696-.103-.253-.447-1.271.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.854.004 1.713.116 2.516.342 1.907-1.296 2.746-1.025 2.746-1.025.547 1.379.203 2.397.1 2.65.64.702 1.027 1.599 1.027 2.696 0 3.867-2.34 4.712-4.57 4.961.36.31.682.92.682 1.855v2.753c0 .268.18.579.689.481C19.135 20.167 22 16.418 22 12c0-5.514-4.486-10-10-10z" />
-                    </svg>
+                  <a href="https://github.com/YuvamKumarSWE" className="text-gray-500 hover:text-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" fill="" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                  </svg>
                   </a>
                   <a href="https://www.linkedin.com/in/yuvamkumar/" className="text-gray-500 hover:text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-7 w-7"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 0H5C2.243 0 0 2.243 0 5v14c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V5c0-2.757-2.243-5-5-5zM8 19H5V8h3v11zm-1.5-12.271c-.966 0-1.5-.723-1.5-1.5S5.534 4.73 6.5 4.73s1.5.723 1.5 1.5S7.466 6.729 6.5 6.729zM19 19h-3v-5.5c0-1.018-.896-1.5-1.5-1.5s-1.5.482-1.5 1.5V19h-3V8h3v1.357C14.337 8.042 15.135 7.5 16.5 7.5c2.083 0 3.5 1.416 3.5 3.5V19z" />
-                    </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" fill="" class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                  </svg>
                   </a>
                   <a href="mailto:yuvamk.swe@gmail.com" className="text-gray-500 hover:text-gray-900">
-                      Mail
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26" fill="black" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                  </svg>
                   </a>
                 </div>
               </div>

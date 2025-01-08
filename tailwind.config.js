@@ -6,7 +6,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-  	extend: {
+  	extend: {	
+
+		fontFamily: {
+  			orbitron: ['Orbitron', 'sans-serif'],
+		   	roboto: ['Roboto', 'sans-serif'],
+
+  		},
+
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
