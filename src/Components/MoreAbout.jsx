@@ -15,12 +15,12 @@ const MoreAbout = () => {
         {
             img: '/images/college.jpg', // Add a university or learning-related image
             title: 'My College Experience',
-            text: 'Currently pursuing a computer science degree, I’m building skills in algorithms, data structures, and full-stack development. Courses like CPSC 320 and CPSC 213 have sharpened my problem-solving and low-level programming skills, while projects have honed my practical knowledge.',
+            text: 'Currently pursuing a computer science degree, I’m building skills in algorithms, data structures, and full-stack development. Courses like CPSC 320, CPSC 213, CPSC 313, and CPSC 304 have sharpened my problem-solving and low-level programming skills, while projects and hackathons have honed my practical knowledge.',
         },
         {
             img: '/images/hobby.jpg', // Add an image that reflects hobbies or personal interests
             title: 'My Interests and Hobbies',
-            text: 'When I’m not coding, I love exploring new technologies, staying active to increase stamina, and sharing my journey as a developer through my Instagram page, @swey.codes. Staying curious and continuously learning is a big part of who I am.',
+            text: 'When I’m not coding, I love playing sports and staying active. I enjoy listening to music, watching Formula 1, and watching a few movies/shows. Staying curious and continuously learning is a big part of who I am.',
         },
     ];
 
