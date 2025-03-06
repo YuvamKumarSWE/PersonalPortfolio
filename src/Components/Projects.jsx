@@ -1,6 +1,5 @@
-import React from 'react';
 import NavBar from "./NavBarComponents/NavBar";
-import './index.css';
+import '../index.css'; // Corrected path
 
 export default function Projects() {
     const cards = [

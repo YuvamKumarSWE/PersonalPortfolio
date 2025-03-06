@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from "./NavBarComponents/NavBar";
+import NavBar from "./Components/NavBarComponents/NavBar";
 import LandingPage from './Components/LandingPage';
 import MoreAbout from './Components/MoreAbout';
 function App() {

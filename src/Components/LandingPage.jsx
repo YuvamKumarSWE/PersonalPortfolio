@@ -10,7 +10,7 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { TbSql } from "react-icons/tb";
 import { FaRProject } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { GoCopilot } from "react-icons/go";
+//import { GoCopilot } from "react-icons/go";
 export default function LandingPage() {
 
     const slugs = [
