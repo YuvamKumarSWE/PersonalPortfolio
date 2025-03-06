@@ -1,61 +1,86 @@
 import NavBar from "./NavBarComponents/NavBar";
-import '../index.css'; // Corrected path
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+import "../index.css";
 
 export default function Projects() {
-    const cards = [
+    const projects = [
         {
-            img: '/images/coding.jpg', // Add a relevant coding-related image
-            title: 'My Coding Journey',
-            text: 'I am deeply passionate about coding and software development. From creating full-stack applications with technologies like React and Spring Boot to solving challenging algorithm problems, I enjoy diving into complex codebases, working with big company servers, and building projects that make an impact.',
+            img: "/images/comingsoon.jpg",
+            title: "NOTEDLY AI",
+            description: "An AI-powered note-taking application built with MERN stack and Python FastAPI. This tool helps users organize and enhance their notes with artificial intelligence capabilities.",
+            github: "https://github.com/YuvamKumarSWE/NOTEDLYAI",
+            deployed: ""
         },
         {
-            img: '/images/life.jpg', // Add an image that represents personal growth or life
-            title: 'About My Life',
-            text: 'Living on my own for the first time has been a transformative experience. I’ve learned to balance cooking nutritious meals, staying active, and growing as a computer science student. It has taught me resilience and the importance of managing priorities effectively.',
+            img: "/images/clockedin.png",
+            title: "Clocked In",
+            description: "A group habit tracker designed to help friends stay consistent with their goals. Users check in daily with photos, maintain streaks together, and receive timely notifications. Built with React.js, Firebase, and TailwindCSS.",
+            github: "https://github.com/YuvamKumarSWE/Group-Habit-Tracker",
+            deployed: "https://groupclockedin.netlify.app/"
         },
         {
-            img: '/images/college.jpg', // Add a university or learning-related image
-            title: 'My College Experience',
-            text: 'Currently pursuing a computer science degree, I’m building skills in algorithms, data structures, and full-stack development. Courses like CPSC 320 and CPSC 213 have sharpened my problem-solving and low-level programming skills, while projects have honed my practical knowledge.',
-        },
-        {
-            img: '/images/hobby.jpg', // Add an image that reflects hobbies or personal interests
-            title: 'My Interests and Hobbies',
-            text: 'When I’m not coding, I love exploring new technologies, staying active to increase stamina, and sharing my journey as a developer through my Instagram page, @swey.codes. Staying curious and continuously learning is a big part of who I am.',
-        },
+            img: "/images/stock.png",
+            title: "AI Stock Predictor",
+            description: "An intelligent stock prediction tool that uses AI algorithms to analyze market trends and provide investment insights. This tool helps users make informed decisions about their investments.",
+            github: "https://github.com/YuvamKumarSWE/StockPredictor",
+            deployed: ""
+        }
     ];
+
     return (
         <>
             <div className="background"></div>
             <NavBar />
             <div className="content">
-            <div className="flex flex-col items-center gap-8 p-6 mt-10">
-                {cards.map((card, index) => (
-                    <div
-                        key={index}
-                        className={`flex flex-col md:flex-row items-center backdrop-blur-3xl shadow-lg rounded-lg overflow-hidden w-full max-w-6xl}`}
-                    >
-                        {/* Image */}
-                        <img
-                            src={card.img}
-                            alt={card.title}
-                            className="w-full h-60 md:w-[500px] md:h-[400px] object-cover"
-                        />
+                <div className="text-center my-16">
+                    <h1 className="text-4xl font-bold mb-6">PROJECTS</h1>
+                    <div className="w-16 h-1 bg-purple-500 mx-auto mb-8"></div>
+                    <p className="max-w-3xl mx-auto text-lg">
+                        Here are some of the projects I’ve built, showcasing a mix of AI, full-stack development, and problem-solving applications.
+                    </p>
+                </div>
 
-                        {/* Content */}
-                        <div className="p-6 flex flex-col gap-4 w-full md:w-4/5">
-                            <h3 className="text-2xl font-bold">{card.title}</h3>
-                            <p className="text-gray-700 text-lg">{card.text}</p>
+                <div className="flex flex-col gap-32 max-w-7xl mx-auto px-6 pb-20">
+                    {projects.map((project, index) => (
+                        <div key={index} className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-16`}>
+                            <div className="w-full md:w-3/5">
+                                <img
+                                    src={project.img}
+                                    alt={project.title}
+                                    className="w-full h-auto rounded-lg shadow-xl object-cover"
+                                />
+                            </div>
+
+                            <div className="w-full md:w-2/5 flex flex-col gap-6">
+                                <h2 className="text-4xl font-bold">{project.title}</h2>
+                                <p className="text-lg text-black">{project.description}</p>
+
+                                <div className="flex gap-6">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-all"
+                                    >
+                                        <FaGithub size={22} /> GitHub
+                                    </a>
+                                    {project.deployed && (
+                                        <a
+                                            href={project.deployed}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-all"
+                                        >
+                                            <FiExternalLink size={22} /> Live Demo
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            
+                    ))}
+                </div>
             </div>
         </>
-
     );
 }
-
-
