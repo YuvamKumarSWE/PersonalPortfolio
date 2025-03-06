@@ -1,6 +1,16 @@
 import IconCloud from "./ui/icon-cloud";
 import Skill from "./Skill";
-
+import { FaJava } from "react-icons/fa6";
+import { IoLogoPython, IoLogoFirebase, IoLogoJavascript } from "react-icons/io5";
+import { FaHtml5, FaReact, FaBootstrap, FaGitAlt, FaLinux } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaNode } from "react-icons/fa";
+import { SiExpress, SiMongodb, SiOracle, SiNumpy, SiPandas, SiTensorflow, SiPostman, SiNetlify, SiCplusplus } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { TbSql } from "react-icons/tb";
+import { FaRProject } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+import { GoCopilot } from "react-icons/go";
 export default function LandingPage() {
 
     const slugs = [
@@ -94,40 +104,38 @@ export default function LandingPage() {
             <div>
                 <h2 className="block text-2xl ml-4 font-semibold" > Skills </h2>
                 <div className="flex flex-wrap gap-4 mt-4 p-4 max-w-[750px] justify-start">
+                <Skill skill="Java" Icon={FaJava} />
+                <Skill skill="JavaScript" Icon={IoLogoJavascript} />
+                <Skill skill="Python" Icon={IoLogoPython} />
+                <Skill skill="C/C++" Icon={SiCplusplus} />
+                <Skill skill="HTML/CSS" Icon={FaHtml5} />
+                <Skill skill="R" Icon={FaRProject} />
+                <Skill skill="SQL" Icon={TbSql} />
+                <Skill skill="Node.js" Icon={FaNode} />
+                <Skill skill="React.js" Icon={FaReact} />
+                <Skill skill="Express.js" Icon={SiExpress} />
+                <Skill skill="Tailwind CSS" Icon={RiTailwindCssFill} />
+                <Skill skill="Bootstrap" Icon={FaBootstrap} />
+                <Skill skill="Numpy" Icon={SiNumpy} />
+                <Skill skill="Pandas" Icon={SiPandas} />
+                <Skill skill="Tensorflow" Icon={SiTensorflow} />
+                <Skill skill="PostgreSQL" Icon={BiLogoPostgresql} />
+                <Skill skill="MongoDB" Icon={SiMongodb} />
+                <Skill skill="Firebase" Icon={IoLogoFirebase} />
+                <Skill skill="Oracle" Icon={SiOracle} />
+                <Skill skill="Git/Github" Icon={FaGitAlt} />
+                <Skill skill="Linux" Icon={FaLinux} />
+                <Skill skill="Postman" Icon={SiPostman} />
+                <Skill skill="VS Code" Icon={VscVscode} />
+                <Skill skill="Netlify" Icon={SiNetlify} />
+                </div>
 
-
-                <Skill skill="MacOS" logo="/logos/apple.svg" />
-                <Skill skill="CSS" logo="/logos/css.svg" />
-                <Skill skill="Git" logo="/logos/git.svg" />
-                <Skill skill="HTML" logo="/logos/html.svg" />
-                <Skill skill="Github" logo="/logos/github.svg" />
-                <Skill skill="intelliJ" logo="/logos/intellij.svg" />
-                <Skill skill="netlify" logo="/logos/netlify.svg" />
-                <Skill skill="NPM" logo="/logos/npm.svg" />
-                <Skill skill="TailwindCSS" logo="/logos/tailwind.svg" />
-                <Skill skill="React" logo="/logos/react.svg" />
-                <Skill skill="JavaScript" logo="/logos/javascript.svg" />
-                <Skill skill="Node.js" logo="/logos/nodejs.svg" />
-                <Skill skill="Python" logo="/logos/python.svg" />
-                <Skill skill="Java" logo="/logos/java.svg" />
-                <Skill skill="SpringBoot" logo="/logos/springboot.svg" /> 
-                <Skill skill="vscode" logo="/logos/vscode.svg" />
-                <Skill skill="Windows" logo="/logos/windows.svg" />
-                <Skill skill="PostgreSQL" logo="/logos/postgresql.svg" />
-                <Skill skill="oracle" logo="/logos/oracle.svg" />
-                <Skill skill="C/C++" logo="/logos/c.svg" />
-
-                
             </div>
-
-            </div>
-
-            
 
             <div className="relative flex size-full max-w-[350px] items-center justify-center overflow-hidden">
-                <IconCloud iconSlugs={slugs} />
+                  <IconCloud iconSlugs={slugs} />
             </div> 
         </div>
-      </>
+      </> 
     );
   }
