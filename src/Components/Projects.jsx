@@ -15,7 +15,7 @@ export default function Projects() {
             deployed: ""
         },
         {
-            img: "/images/comingsoon.jpg",
+            img: "/images/spacify.png",
             title: "Spacify",
             description: "A comprehensive space research data platform built with Node.js, Express, and Oracle DB. Spacify shortens space research and data collection by aggregating information from various sources into a unified interface. Features complex SQL queries and a responsive GUI for efficient data retrieval and analysis.",
             github: "https://github.com/YuvamKumarSWE/Spacify",
@@ -29,7 +29,7 @@ export default function Projects() {
             deployed: "https://groupclockedin.netlify.app/"
         },
         {
-            img: "/images/comingsoon.jpg",
+            img: "/images/anime.png",
             title: "Anime AI Recommendation System",
             description: "A personalized anime recommendation platform that uses machine learning algorithms to suggest anime based on user preferences. Built with the MERN stack (MongoDB, Express, React, Node.js) and integrates content-based filtering techniques.",
             github: "https://github.com/YuvamKumarSWE/MERN-Anime-Website",

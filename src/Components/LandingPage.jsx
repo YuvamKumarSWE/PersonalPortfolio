@@ -213,13 +213,12 @@ export default function LandingPage() {
                     { skill: "Tailwind CSS", Icon: RiTailwindCssFill },
                     { skill: "Bootstrap", Icon: FaBootstrap },
                     { skill: "Numpy", Icon: SiNumpy },
-                    { skill: "Tensorflow", Icon: SiTensorflow },
                     { skill: "PostgreSQL", Icon: BiLogoPostgresql },
                     { skill: "MongoDB", Icon: SiMongodb },
                     { skill: "Firebase", Icon: IoLogoFirebase },
                     { skill: "Oracle", Icon: SiOracle },
                     { skill: "Git/Github", Icon: FaGitAlt },
-                    { skill: "Linux", Icon: FaLinux },
+        
                     { skill: "Postman", Icon: SiPostman },
                     { skill: "VS Code", Icon: VscVscode },
                     { skill: "Netlify", Icon: SiNetlify }
