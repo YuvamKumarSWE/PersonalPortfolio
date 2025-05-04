@@ -8,7 +8,7 @@ import ScrollProgress from "./ui/ScrollProgress";
 export default function Projects() {
     const projects = [
         {
-            img: "/images/comingsoon.jpg",
+            img: "/images/note.png",
             title: "NOTEDLY AI",
             description: "An AI-powered note-taking application built with MERN stack and Python FastAPI. This tool helps users organize and enhance their notes with artificial intelligence capabilities.",
             github: "https://github.com/YuvamKumarSWE/NOTEDLYAI",
