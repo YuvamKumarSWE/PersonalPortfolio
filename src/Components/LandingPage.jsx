@@ -198,7 +198,7 @@ export default function LandingPage() {
                     Get In Touch
                   </motion.a>
                   <motion.a
-                    href="https://drive.google.com/file/d/1tI1YDb495YwzzHpGVPyI-B0MJi7KfZbs/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}

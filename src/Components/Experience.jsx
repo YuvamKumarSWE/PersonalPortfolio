@@ -5,45 +5,42 @@ export default function Experience() {
     const experiences = [
         {
             id: 1,
-            company: "Tech Innovations Inc.",
-            position: "Software Engineering Intern",
-            duration: "May 2024 - August 2024",
-            location: "Vancouver, BC",
+            company: "RBC",
+            position: "Incoming Software Engineering Intern",
+            duration: "September 2025 - December 2025",
+            location: "Toronto, ON",
             description: [
-                "Developed and maintained web applications using React.js and Node.js",
-                "Collaborated with cross-functional teams to deliver high-quality software solutions",
-                "Implemented responsive UI components following modern design principles",
-                "Participated in code reviews and agile development processes"
+                "Set to join RBC's technology team for a fall internship, focusing on enterprise-level financial technology.",
+                "Will be developing and maintaining applications using Spring Boot and Angular.",
+                "Tasked with applying machine learning principles to contribute to innovative software solutions."
             ],
-            technologies: ["React", "Node.js", "JavaScript", "Git", "Agile"]
+            technologies: ["Spring Boot", "Angular", "Machine Learning", "Enterprise Software"]
         },
         {
             id: 2,
-            company: "Digital Solutions Corp",
-            position: "Frontend Developer",
-            duration: "September 2023 - April 2024",
-            location: "Remote",
+            company: "UBC AMLA",
+            position: "Software Developer",
+            duration: "January 2025 – Present",
+            location: "Vancouver, BC",
             description: [
-                "Built dynamic user interfaces using React and modern CSS frameworks",
-                "Optimized application performance and improved user experience",
-                "Integrated RESTful APIs and managed state using Redux",
-                "Worked closely with designers to implement pixel-perfect designs"
+                "Collaborating within an Agile team to design, build, and maintain a full-stack AI video platform using Python to promote AI literacy and enhance educational engagement.",
+                "Leading development of an AI-powered video sourcing pipeline using Python, ffmpeg, and Whisper to extract relevant segments and enhance content accuracy.",
+                "Achieved a 95% reduction in video flickering and increased focused content accuracy through robust engineering and weekly Agile sprints."
             ],
-            technologies: ["React", "Redux", "CSS3", "REST APIs", "Figma"]
+            technologies: ["Python", "AI/ML", "Full-Stack", "ffmpeg", "Whisper", "Agile"]
         },
         {
             id: 3,
-            company: "StartupLab Solutions",
-            position: "Full Stack Developer",
-            duration: "June 2023 - August 2023",
-            location: "Vancouver, BC",
+            company: "Collin College",
+            position: "Undergraduate Research Assistant",
+            duration: "September 2023 – May 2024",
+            location: "Frisco, TX",
             description: [
-                "Developed full-stack applications using MERN stack",
-                "Designed and implemented database schemas using MongoDB",
-                "Created secure authentication systems and API endpoints",
-                "Deployed applications to cloud platforms and managed CI/CD pipelines"
+                "Led research achieving 99% accuracy in calculus model validation using computational methods, resulting in simulations now adopted as educational visualization tools.",
+                "Utilized AutoCAD and simulation software to construct high-accuracy models, bridging theoretical knowledge with practical applications.",
+                "Showcased research outcomes at a regional conference, delivering presentations to university faculty and academic audiences."
             ],
-            technologies: ["MongoDB", "Express", "React", "Node.js", "AWS"]
+            technologies: ["Research", "Computational Methods", "AutoCAD", "Data Visualization", "Public Speaking"]
         }
     ];
 
@@ -73,7 +70,7 @@ export default function Experience() {
         <>
             <ScrollProgress />
             <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto pt-8">
                     {/* Header */}
                     <motion.div
                         initial={{ opacity: 0, y: -30 }}
@@ -81,13 +78,13 @@ export default function Experience() {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
-                        <h1 className="text-5xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-5xl lg:text-6xl pt-5 font-bold text-gray-900 mb-6">
                             Professional Experience
                         </h1>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                             My journey as a software engineer, building innovative solutions and growing through diverse experiences
                         </p>
-                        <div className="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+                        <div className="w-24 h-1 bg-blue-600 mx-auto mt-8 rounded-full"></div>
                     </motion.div>
 
                     {/* Experience Timeline */}
@@ -159,31 +156,7 @@ export default function Experience() {
                         ))}
                     </motion.div>
 
-                    {/* CTA Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="text-center mt-16 p-8 bg-white rounded-2xl shadow-lg"
-                    >
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                            Ready to Collaborate?
-                        </h3>
-                        <p className="text-gray-600 mb-6">
-                            I&apos;m always open to discussing new opportunities and exciting projects
-                        </p>
-                        <motion.a
-                            href="mailto:yuvamk.swe@gmail.com"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                        >
-                            Get In Touch
-                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </motion.a>
-                    </motion.div>
+             
                 </div>
             </div>
         </>
