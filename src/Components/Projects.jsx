@@ -8,7 +8,7 @@ export default function Projects() {
     const projects = [
         {
             id: 1,
-            img: "/images/comingsoon.jpg",
+            img: "/images/note.png",
             title: "NOTEDLY AI",
             description: "An AI-powered note-taking application built with MERN stack and Python FastAPI. This tool helps users organize and enhance their notes with artificial intelligence capabilities, featuring smart categorization and content suggestions.",
             github: "https://github.com/YuvamKumarSWE/NOTEDLYAI",
