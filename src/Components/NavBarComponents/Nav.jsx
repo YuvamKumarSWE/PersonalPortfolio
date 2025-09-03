@@ -38,7 +38,7 @@ export default function Nav() {
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
         { name: "Experience", path: "/experience" },
-        { name: "Resume", path: "https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing", external: true }
+        { name: "Resume", path: "https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=drive_link", external: true }
     ];
 
     const hamburgerVariants = {
