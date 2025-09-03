@@ -6,18 +6,28 @@ import ScrollProgress from "./ui/ScrollProgress";
 
 export default function Projects() {
     const projects = [
-        {
+         {
             id: 1,
+            img: "/images/f1.png",
+            title: "F1 Fantasy League",
+            description: "Engineered a full-stack F1 Fantasy League platform using the MERN stack and TypeScript, enabling real-time user interactions, dynamic leaderboards, and seamless team management. Designed and implemented robust RESTful APIs in Node.js and Express for secure authentication and scalable backend infrastructure. Integrated advanced data visualization and responsive React UI components for an engaging fantasy team selection experience across devices.",
+            github: "https://github.com/YuvamKumarSWE/F1FantasyLeague",
+            deployed: "https://ykf1-fantasy.vercel.app/",
+            technologies: ["TypeScript", "Node.js", "React", "MongoDB", "Express", "MERN"],
+            status: "Live"
+        },
+        {
+            id: 2,
             img: "/images/note.png",
             title: "NOTEDLY AI",
             description: "An AI-powered note-taking application built with MERN stack and Python FastAPI. This tool helps users organize and enhance their notes with artificial intelligence capabilities, featuring smart categorization and content suggestions.",
             github: "https://github.com/YuvamKumarSWE/NOTEDLYAI",
             deployed: "",
             technologies: ["React", "Node.js", "Python", "FastAPI", "MongoDB", "AI/ML"],
-            status: "In Development"
+            status: "Completed"
         },
         {
-            id: 2,
+            id: 3,
             img: "/images/spacify.png",
             title: "Spacify",
             description: "A comprehensive space research data platform built with Node.js, Express, and Oracle DB. Spacify shortens space research and data collection by aggregating information from various sources into a unified interface. Features complex SQL queries and a responsive GUI for efficient data retrieval and analysis.",
@@ -27,7 +37,7 @@ export default function Projects() {
             status: "Completed"
         },
         {
-            id: 3,
+            id: 4,
             img: "/images/clockedin.png",
             title: "Clocked In",
             description: "A group habit tracker designed to help friends stay consistent with their goals. Users check in daily with photos, maintain streaks together, and receive timely notifications. Built with React.js, Firebase, and TailwindCSS.",
@@ -35,16 +45,6 @@ export default function Projects() {
             deployed: "https://groupclockedin.netlify.app/",
             technologies: ["React", "Firebase", "TailwindCSS", "JavaScript"],
             status: "Live"
-        },
-        {
-            id: 4,
-            img: "/images/anime.png",
-            title: "Anime AI Recommendation System",
-            description: "A personalized anime recommendation platform that uses machine learning algorithms to suggest anime based on user preferences. Built with the MERN stack (MongoDB, Express, React, Node.js) and integrates content-based filtering techniques.",
-            github: "https://github.com/YuvamKumarSWE/MERN-Anime-Website",
-            deployed: "",
-            technologies: ["MongoDB", "Express", "React", "Node.js", "Machine Learning"],
-            status: "Completed"
         },
         {
             id: 5,
@@ -55,7 +55,17 @@ export default function Projects() {
             deployed: "",
             technologies: ["Python", "Machine Learning", "Data Analysis", "APIs"],
             status: "Completed"
-        }
+        },
+        {
+            id: 6,
+            img: "/images/anime.png",
+            title: "Anime AI Recommendation System",
+            description: "A personalized anime recommendation platform that uses machine learning algorithms to suggest anime based on user preferences. Built with the MERN stack (MongoDB, Express, React, Node.js) and integrates content-based filtering techniques.",
+            github: "https://github.com/YuvamKumarSWE/MERN-Anime-Website",
+            deployed: "",
+            technologies: ["MongoDB", "Express", "React", "Node.js", "Machine Learning"],
+            status: "Completed"
+        },
     ];
 
     const containerVariants = {

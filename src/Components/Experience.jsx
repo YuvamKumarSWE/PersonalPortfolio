@@ -5,29 +5,29 @@ export default function Experience() {
     const experiences = [
         {
             id: 1,
-            company: "RBC",
-            position: "Incoming Software Engineering Intern",
-            duration: "September 2025 - December 2025",
+            company: "Royal Bank of Canada",
+            position: "Software Development Intern",
+            duration: "Sept 2025 – Present",
             location: "Toronto, ON",
             description: [
-                "Set to join RBC's technology team for a fall internship, focusing on enterprise-level financial technology.",
-                "Will be developing and maintaining applications using Spring Boot and Angular.",
-                "Tasked with applying machine learning principles to contribute to innovative software solutions."
+                "Contributing to the development of scalable APIs and customer-facing applications within an Agile team, leveraging modern technologies such as Spring Boot, JPA, and Angular.",
+                "Collaborating with developers, product managers, and business stakeholders to deliver innovative solutions supporting RBC's large-scale digital transformation in commercial banking.",
+                "Enhancing technical foundation through hands-on experience with software engineering practices including code reviews, testing, and source code management to ensure high-quality deliverables."
             ],
-            technologies: ["Spring Boot", "Angular", "Machine Learning", "Enterprise Software"]
+            technologies: ["Spring Boot", "JPA", "Angular", "APIs", "Agile"]
         },
         {
             id: 2,
             company: "UBC AMLA",
             position: "Software Developer",
-            duration: "January 2025 – Present",
+            duration: "Jan 2025 – Current",
             location: "Vancouver, BC",
             description: [
-                "Collaborating within an Agile team to design, build, and maintain a full-stack AI video platform using Python to promote AI literacy and enhance educational engagement.",
-                "Leading development of an AI-powered video sourcing pipeline using Python, ffmpeg, and Whisper to extract relevant segments and enhance content accuracy.",
-                "Achieved a 95% reduction in video flickering and increased focused content accuracy through robust engineering and weekly Agile sprints."
+                "Collaborated within an Agile team to design and develop a full-stack AI video platform in Python, leading the implementation of a sourcing pipeline using ffmpeg, Whisper, and related libraries to enhance educational engagement and content accuracy.",
+                "Deployed ML services with Gradio and Hugging Face Spaces, optimizing model spin-up and leveraging multithreading to accelerate video transcription and processing.",
+                "Achieved 95% reduction in video flickering, increased focused content accuracy, minimized subtitle delays, and collaborated with a team of developers following best practices and weekly Agile meetings."
             ],
-            technologies: ["Python", "AI/ML", "Full-Stack", "ffmpeg", "Whisper", "Agile"]
+            technologies: ["Python", "ffmpeg", "Whisper", "Gradio", "Hugging Face Spaces", "Multithreading", "Agile"]
         },
         {
             id: 3,
