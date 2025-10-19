@@ -10,22 +10,23 @@ export default function Experience() {
             duration: "Sept 2025 – Present",
             location: "Toronto, ON",
             description: [
-                "Contributing to the development of scalable APIs and customer-facing applications within an Agile team, leveraging modern technologies such as Spring Boot, JPA, and Angular.",
-                "Collaborating with developers, product managers, and business stakeholders to deliver innovative solutions supporting RBC's large-scale digital transformation in commercial banking.",
-                "Enhancing technical foundation through hands-on experience with software engineering practices including code reviews, testing, and source code management to ensure high-quality deliverables."
+                "Developing Spring Boot microservices for high-availability commercial banking systems, integrating with Angular frontends, MySQL, and AWS components, ensuring reliability through comprehensive testing.",
+                "Enhanced Spring Boot backend and Dockerized MySQL database to implement 20 wire payment fields, uncovering and resolving a critical pre-production bug to maintain seamless payment processing.",
+                "Refactored legacy presentation logic to streamline payment activity rendering, optimizing 40% of code through clean architecture principles, reducing technical debt and enhancing maintainability.",
+                "Implemented 15+ Google Analytics events across 3 high-traffic user journeys, providing product teams with actionable insights to drive adoption."
             ],
-            technologies: ["Spring Boot", "JPA", "Angular", "APIs", "Agile"]
+            technologies: ["Spring Boot", "JPA", "Angular", "SQL", "MySQL", "AWS", "Docker", "Maven", "Postman", "APIs", "Jira", "Jest", "JUnit"]
         },
         {
             id: 2,
             company: "UBC AMLA",
             position: "Software Developer",
-            duration: "Jan 2025 – Current",
+            duration: "Jan 2025 – Aug 2025",
             location: "Vancouver, BC",
             description: [
-                "Collaborated within an Agile team to design and develop a full-stack AI video platform in Python, leading the implementation of a sourcing pipeline using ffmpeg, Whisper, and related libraries to enhance educational engagement and content accuracy.",
-                "Deployed ML services with Gradio and Hugging Face Spaces, optimizing model spin-up and leveraging multithreading to accelerate video transcription and processing.",
-                "Achieved 95% reduction in video flickering, increased focused content accuracy, minimized subtitle delays, and collaborated with a team of developers following best practices and weekly Agile meetings."
+                "Designed and deployed a full-stack Python AI video platform, reducing flickering by 99% and improving subtitle accuracy to 95%, enhancing learning engagement.",
+                "Optimized NVIDIA ASR-powered transcription pipelines with multi-threading, optimizing model spin-up and leveraging GPU acceleration to accelerate transcription, cutting processing time by 40%.",
+                "Contributed to setting up multiple microservices and deployed ML services on Hugging Face Spaces with Gradio, enabling efficient real-time access for users."
             ],
             technologies: ["Python", "ffmpeg", "Whisper", "Gradio", "Hugging Face Spaces", "Multithreading", "Agile"]
         },
@@ -36,8 +37,8 @@ export default function Experience() {
             duration: "September 2023 – May 2024",
             location: "Frisco, TX",
             description: [
-                "Led research achieving 99% accuracy in calculus model validation using computational methods, resulting in simulations now adopted as educational visualization tools.",
-                "Utilized AutoCAD and simulation software to construct high-accuracy models, bridging theoretical knowledge with practical applications.",
+                "Achieved 99% accuracy in calculus simulation model validation using computational methods, with resulting visual tools adopted by 200+ students.",
+                "Produced high-accuracy models using AutoCAD and simulation software, and presented research findings at academic symposiums to advance adoption of technological teaching aids.",
                 "Showcased research outcomes at a regional conference, delivering presentations to university faculty and academic audiences."
             ],
             technologies: ["Research", "Computational Methods", "AutoCAD", "Data Visualization", "Public Speaking"]
