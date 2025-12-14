@@ -21,7 +21,6 @@ export default function Experience() {
             company: "UBC Applied Machine Learning and Arts",
             position: "Software Developer",
             duration: "Jan 2025 – Aug 2025",
-            duration: "Jan 2025 – Aug 2025",
             location: "Vancouver, BC",
             description: [
                 "Designed and deployed a full-stack Python video platform that automated strategic video trimming and reduced content duration by 75%, while significantly optimizing flicker between clips to improve video quality.",
