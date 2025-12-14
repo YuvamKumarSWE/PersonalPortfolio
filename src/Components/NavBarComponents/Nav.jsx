@@ -38,7 +38,7 @@ export default function Nav() {
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
         { name: "Experience", path: "/experience" },
-        { name: "Resume", path: "https://drive.google.com/file/d/1VzAANP5IF1PdlMufoT0L7n2yYqaB-CmD/view?usp=sharing", external: true }
+        { name: "Resume", path: "https://drive.google.com/file/d/1YkqLrOuZAh8QRU7AhPRu2GgIwZI5Qqy7/view?usp=sharing", external: true }
     ];
 
     const hamburgerVariants = {
@@ -108,7 +108,7 @@ export default function Nav() {
                         ) : (
                             <NavLink
                                 to={item.path}
-                                className={({ isActive }) => 
+                                className={({ isActive }) =>
                                     `nav-link ${isActive ? 'nav-link-active' : ''}`
                                 }
                             >
@@ -186,7 +186,7 @@ export default function Nav() {
                                     ) : (
                                         <NavLink
                                             to={item.path}
-                                            className={({ isActive }) => 
+                                            className={({ isActive }) =>
                                                 `mobile-nav-link ${isActive ? 'mobile-nav-link-active' : ''}`
                                             }
                                             onClick={() => setIsOpen(false)}

@@ -6,42 +6,41 @@ export default function Experience() {
         {
             id: 1,
             company: "Royal Bank of Canada",
-            position: "Software Development Intern",
-            duration: "Sept 2025 – Present",
+            position: "Software Developer Intern",
+            duration: "Sept 2025 – Dec 2025",
             location: "Toronto, ON",
             description: [
-                "Developing Spring Boot microservices for high-availability commercial banking systems, integrating with Angular frontends, MySQL, and AWS components, ensuring reliability through comprehensive testing.",
-                "Enhanced Spring Boot backend and Dockerized MySQL database to implement 20 wire payment fields, uncovering and resolving a critical pre-production bug to maintain seamless payment processing.",
-                "Refactored legacy presentation logic to streamline payment activity rendering, optimizing 40% of code through clean architecture principles, reducing technical debt and enhancing maintainability.",
-                "Implemented 15+ Google Analytics events across 3 high-traffic user journeys, providing product teams with actionable insights to drive adoption."
+                "Engineered secure file download Spring Boot features using AWS S3 for 1000+ clients with role-based permission validation and optimizing retrieval logic to reduce average zip download time by 45%.",
+                "Expanded the Spring Boot backend and MySQL database to support 20 new wire-payment fields and built a MongoDB module for customer interest data with REST endpoints, ensuring system stability.",
+                "Refactored old presentation logic and introduced new UI components to improve payment activity rendering, resulting in cleaner architecture and improved maintainability."
             ],
-            technologies: ["Spring Boot", "JPA", "Angular", "SQL", "MySQL", "AWS", "Docker", "Maven", "Postman", "APIs", "Jira", "Jest", "JUnit"]
+            technologies: ["Spring Boot", "AWS S3", "MySQL", "MongoDB", "REST APIs", "Java"]
         },
         {
             id: 2,
-            company: "UBC AMLA",
+            company: "UBC Applied Machine Learning and Arts",
             position: "Software Developer",
+            duration: "Jan 2025 – Aug 2025",
             duration: "Jan 2025 – Aug 2025",
             location: "Vancouver, BC",
             description: [
-                "Designed and deployed a full-stack Python AI video platform, reducing flickering by 99% and improving subtitle accuracy to 95%, enhancing learning engagement.",
-                "Optimized NVIDIA ASR-powered transcription pipelines with multi-threading, optimizing model spin-up and leveraging GPU acceleration to accelerate transcription, cutting processing time by 40%.",
+                "Designed and deployed a full-stack Python video platform that automated strategic video trimming and reduced content duration by 75%, while significantly optimizing flicker between clips to improve video quality.",
+                "Improved Nvidia ASR transcription by adding multi-threading, applying an efficient chunking strategy, and reducing model spin-up time, cutting transcription time by 30%.",
                 "Contributed to setting up multiple microservices and deployed ML services on Hugging Face Spaces with Gradio, enabling efficient real-time access for users."
             ],
-            technologies: ["Python", "ffmpeg", "Whisper", "Gradio", "Hugging Face Spaces", "Multithreading", "Agile"]
+            technologies: ["Python", "Nvidia ASR", "Multi-threading", "Gradio", "Hugging Face Spaces", "Microservices"]
         },
         {
             id: 3,
             company: "Collin College",
-            position: "Undergraduate Research Assistant",
-            duration: "September 2023 – May 2024",
+            position: "Math Research Assistant",
+            duration: "Sept 2023 – May 2024",
             location: "Frisco, TX",
             description: [
                 "Achieved 99% accuracy in calculus simulation model validation using computational methods, with resulting visual tools adopted by 200+ students.",
-                "Produced high-accuracy models using AutoCAD and simulation software, and presented research findings at academic symposiums to advance adoption of technological teaching aids.",
-                "Showcased research outcomes at a regional conference, delivering presentations to university faculty and academic audiences."
+                "Produced high-accuracy models using AutoCAD and simulation software, and presented research findings at an academic conference to advance adoption of technological teaching aids."
             ],
-            technologies: ["Research", "Computational Methods", "AutoCAD", "Data Visualization", "Public Speaking"]
+            technologies: ["Computational Methods", "AutoCAD", "Simulation Software", "Research", "Data Visualization"]
         }
     ];
 
@@ -109,7 +108,7 @@ export default function Experience() {
 
                                 {/* Experience Card */}
                                 <motion.div
-                                    whileHover={{ 
+                                    whileHover={{
                                         scale: 1.02,
                                         boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                                     }}
@@ -157,7 +156,7 @@ export default function Experience() {
                         ))}
                     </motion.div>
 
-             
+
                 </div>
             </div>
         </>
