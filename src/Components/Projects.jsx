@@ -29,6 +29,16 @@ export default function Projects() {
         },
         {
             id: 3,
+            img: "/images/HireSignal.png",
+            title: "HireSignal",
+            description: "An AI-powered interview preparation platform that uses Google Gemini and ElevenLabs to conduct realistic voice/text interviews. It generates role-specific questions, evaluates responses in real-time, and provides actionable feedback with an offer likelihood score to help candidates improve.",
+            github: "https://github.com/yeyeyeen/HireSignal",
+            deployed: "https://devpost.com/software/hiresignal",
+            technologies: ["React", "Node.js", "Express", "Gemini AI", "ElevenLabs", "Tailwind CSS"],
+            status: "Completed"
+        },
+        {
+            id: 4,
             img: "/images/note.png",
             title: "NOTEDLY AI",
             description: "An AI-powered note-taking application built with MERN stack and Python FastAPI. This tool helps users organize and enhance their notes with artificial intelligence capabilities, featuring smart categorization and content suggestions.",
@@ -38,7 +48,7 @@ export default function Projects() {
             status: "Completed"
         },
         {
-            id: 4,
+            id: 5,
             img: "/images/spacify.png",
             title: "Spacify",
             description: "A comprehensive space research data platform built with Node.js, Express, and Oracle DB. Spacify shortens space research and data collection by aggregating information from various sources into a unified interface. Features complex SQL queries and a responsive GUI for efficient data retrieval and analysis.",
@@ -48,7 +58,7 @@ export default function Projects() {
             status: "Completed"
         },
         {
-            id: 5,
+            id: 6,
             img: "/images/clockedin.png",
             title: "Clocked In",
             description: "A group habit tracker designed to help friends stay consistent with their goals. Users check in daily with photos, maintain streaks together, and receive timely notifications. Built with React.js, Firebase, and TailwindCSS.",
@@ -58,7 +68,7 @@ export default function Projects() {
             status: "Live"
         },
         {
-            id: 6,
+            id: 7,
             img: "/images/stock.png",
             title: "AI Stock Predictor",
             description: "An intelligent stock prediction tool that uses AI algorithms to analyze market trends and provide investment insights. This tool helps users make informed decisions about their investments with real-time data analysis.",
@@ -68,7 +78,7 @@ export default function Projects() {
             status: "Completed"
         },
         {
-            id: 7,
+            id: 8,
             img: "/images/anime.png",
             title: "Anime AI Recommendation System",
             description: "A personalized anime recommendation platform that uses machine learning algorithms to suggest anime based on user preferences. Built with the MERN stack (MongoDB, Express, React, Node.js) and integrates content-based filtering techniques.",
@@ -218,7 +228,7 @@ export default function Projects() {
                                                         className="flex items-center gap-2 px-5 py-2.5 bg-neon-green text-dark-bg rounded-lg font-bold text-sm uppercase tracking-wide"
                                                     >
                                                         <FiExternalLink className="w-4 h-4" />
-                                                        {project.title === "StudyForgeAI" ? "DevPost" : "Live"}
+                                                        {["StudyForgeAI", "HireSignal"].includes(project.title) ? "DevPost" : "Live"}
                                                     </motion.a>
                                                 )}
                                             </div>
