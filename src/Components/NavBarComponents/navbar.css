@@ -1,21 +1,20 @@
 /* Modern Navbar Styles */
 .navbar {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    animation: fadeInDown 0.6s ease-out;
 }
 
 /* Enhanced blur effect when scrolled */
 .blur-navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Logo container */
@@ -33,18 +32,16 @@
 .logo-text {
     font-size: 1.75rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    /* White text */
+    text-shadow: 0 0 10px rgba(0, 240, 80, 0.1);
     transition: all 0.3s ease;
 }
 
 .logo-container:hover .logo-text {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #00F050;
+    /* Neon green on hover */
+    text-shadow: 0 0 15px rgba(0, 240, 80, 0.5);
 }
 
 /* Navigation container */
@@ -56,69 +53,63 @@
     flex: 1;
 }
 
-/* Desktop navigation - Completely redone spacing */
-.nav-container > div:first-child {
+/* Desktop navigation */
+.nav-container>div:first-child {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Smaller gap, we'll use margin on individual items */
+    gap: 0.5rem;
 }
 
-/* Base nav link styling - Completely redone */
+/* Base nav link styling */
 .nav-link {
     position: relative;
     display: inline-block;
-    color: #4b5563;
+    color: #aeaeae;
+    /* Muted text */
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     padding: 0.625rem 1.25rem;
-    margin: 0 0.375rem; /* Space between buttons */
+    margin: 0 0.375rem;
     border-radius: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
     border: 1px solid transparent;
-    white-space: nowrap;
-    overflow: visible; /* Allow shadows to show */
 }
 
 /* Hover effects */
 .nav-link:hover {
-    color: #2563eb;
-    background-color: rgba(37, 99, 235, 0.05);
-    border-color: rgba(37, 99, 235, 0.1);
+    color: #00F050;
+    /* Neon green */
+    background-color: rgba(0, 240, 80, 0.05);
+    border-color: rgba(0, 240, 80, 0.2);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 10px rgba(0, 240, 80, 0.1);
 }
 
 /* Active state */
 .nav-link-active {
-    color: #2563eb !important;
-    background-color: rgba(37, 99, 235, 0.08);
-    border-color: rgba(37, 99, 235, 0.2);
+    color: #00F050 !important;
+    background-color: rgba(0, 240, 80, 0.08);
+    border-color: rgba(0, 240, 80, 0.1);
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 /* Resume button - Special styling */
 .nav-link[href*="drive.google.com"] {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
-    color: white !important;
-    font-weight: 600;
+    background: #00F050 !important;
+    color: #0a0a0a !important;
+    /* Dark text on bright background */
+    font-weight: 700;
     border: none !important;
-    margin-left: 0.75rem !important; /* Extra space before resume button */
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    margin-left: 0.75rem !important;
+    box-shadow: 0 0 15px rgba(0, 240, 80, 0.4);
 }
 
 .nav-link[href*="drive.google.com"]:hover {
-    background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
-    color: white !important;
+    background: #00c040 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-}
-
-/* Remove the old ::before pseudo-element */
-.nav-link::before {
-    display: none;
+    box-shadow: 0 0 25px rgba(0, 240, 80, 0.6);
 }
 
 /* Hamburger button */
@@ -139,13 +130,13 @@
 }
 
 .hamburger:hover {
-    background-color: rgba(156, 163, 175, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hamburger-line {
     width: 1.5rem;
     height: 2px;
-    background-color: #374151;
+    background-color: #ffffff;
     margin: 2px 0;
     transition: all 0.3s ease;
     transform-origin: center;
@@ -158,9 +149,7 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #0a0a0a;
     padding: 6rem 2rem 2rem;
     z-index: 50;
     overflow-y: auto;
@@ -183,7 +172,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #374151;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -192,25 +181,24 @@
     transition: all 0.3s ease;
     text-align: center;
     width: 100%;
-    background: rgba(248, 250, 252, 0.8);
-    border: 1px solid rgba(226, 232, 240, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    /* Slight white for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 0.5rem;
 }
 
 .mobile-nav-link:hover {
-    color: #2563eb;
-    background-color: rgba(37, 99, 235, 0.1);
+    color: #00F050;
+    background-color: rgba(0, 240, 80, 0.1);
     transform: scale(1.02);
-    border-color: rgba(37, 99, 235, 0.2);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    border-color: rgba(0, 240, 80, 0.3);
 }
 
 .mobile-nav-link-active {
-    color: #2563eb !important;
-    background-color: rgba(37, 99, 235, 0.15);
+    color: #00F050 !important;
+    background-color: rgba(0, 240, 80, 0.15);
     font-weight: 700;
-    border-color: rgba(37, 99, 235, 0.3);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+    border-color: rgba(0, 240, 80, 0.3);
 }
 
 /* Mobile backdrop */
@@ -220,16 +208,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 40;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .nav-container > div:first-child {
+    .nav-container>div:first-child {
         display: none;
     }
-    
+
     .hamburger {
         display: flex;
     }
@@ -239,7 +227,7 @@
     .mobile-menu {
         display: none !important;
     }
-    
+
     .hamburger {
         display: none;
     }
@@ -264,6 +252,7 @@
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

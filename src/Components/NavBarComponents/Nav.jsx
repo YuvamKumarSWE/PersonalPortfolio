@@ -38,7 +38,7 @@ export default function Nav() {
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
         { name: "Experience", path: "/experience" },
-        { name: "Resume", path: "https://drive.google.com/file/d/1YkqLrOuZAh8QRU7AhPRu2GgIwZI5Qqy7/view?usp=sharing", external: true }
+        { name: "Resume", path: "https://docs.google.com/document/d/168iQXvN43u1VBt0KI458l7FJb24njA1L/edit?usp=sharing&ouid=116903424471273577317&rtpof=true&sd=true", external: true }
     ];
 
     const hamburgerVariants = {
@@ -201,7 +201,7 @@ export default function Nav() {
                                                     <span>{item.name}</span>
                                                     {isActive && (
                                                         <motion.div
-                                                            className="w-2 h-2 bg-blue-600 rounded-full"
+                                                            className="w-2 h-2 bg-neon-green rounded-full"
                                                             initial={{ scale: 0 }}
                                                             animate={{ scale: 1 }}
                                                             transition={{ type: "spring", stiffness: 500, damping: 30 }}

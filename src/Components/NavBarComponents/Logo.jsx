@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 export default function Logo() {
     return (
         <Link to="/" className="logo-container">
-            <motion.div 
+            <motion.div
                 className="flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
                 {/* Name with original styling */}
-                <motion.h1 
-                    className="logo-text font-orbitron font-bold text-2xl text-black"
+                <motion.h1
+                    className="logo-text font-grotesk font-bold text-2xl"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
