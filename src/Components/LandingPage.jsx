@@ -214,7 +214,7 @@ export default function LandingPage() {
           {/* Giant Name — letter-by-letter 3D flip */}
           <div className="overflow-hidden mb-4">
             <motion.h1
-              className="font-grotesk font-bold text-[12vw] sm:text-[10vw] lg:text-[9vw] leading-[0.85] tracking-tight text-white"
+              className="font-grotesk font-bold text-[12vw] sm:text-[10vw] lg:text-[9vw] leading-[0.85] tracking-tight text-white whitespace-nowrap"
               style={{ perspective: 1000 }}
             >
               {nameLetters.map((letter, i) => (

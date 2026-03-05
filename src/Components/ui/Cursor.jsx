@@ -4,8 +4,17 @@ import { motion } from 'framer-motion';
 const Cursor = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(() => window.innerWidth > 1024);
 
     useEffect(() => {
+        const handleResize = () => setIsDesktop(window.innerWidth > 1024);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (!isDesktop) return;
+
         const updateMousePosition = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
@@ -26,7 +35,9 @@ const Cursor = () => {
             window.removeEventListener('mousemove', updateMousePosition);
             window.removeEventListener('mouseover', handleMouseOver);
         };
-    }, []);
+    }, [isDesktop]);
+
+    if (!isDesktop) return null;
 
     return (
         <>
