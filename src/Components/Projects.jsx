@@ -91,18 +91,19 @@ export default function Projects() {
 
     const [hoveredId, setHoveredId] = useState(null);
 
-    const getStatusColor = (status) => {
+    const getStatusStyle = (status) => {
         switch (status) {
             case "Live":
-                return "bg-neon-green/20 text-neon-green border border-neon-green/30";
-            case "In Development":
-                return "bg-blue-500/20 text-blue-400 border border-blue-500/30";
+                return { color: '#0891B2', border: '1px solid #06B6D4', background: 'rgba(6,182,212,0.1)' };
             case "Completed":
-                return "bg-purple-500/20 text-purple-400 border border-purple-500/30";
+                return { color: '#CA8A04', border: '1px solid #EAB308', background: 'rgba(234,179,8,0.1)' };
             default:
-                return "bg-gray-500/20 text-gray-400 border border-gray-500/30";
+                return { color: '#52525B', border: '1px solid #71717A', background: 'rgba(0,0,0,0.05)' };
         }
     };
+
+    // Cycle tech tag colors: all 6 Y2K colors (Darker)
+    const tagColors = ['#D946EF', '#06B6D4', '#EAB308', '#EA580C', '#16A34A', '#DB2777'];
 
     return (
         <div className="min-h-screen">
@@ -116,89 +117,114 @@ export default function Projects() {
                 transition={{ duration: 0.8 }}
             >
                 <div className="max-w-7xl mx-auto">
-                    <p className="text-neon-green font-mono text-sm tracking-[0.3em] uppercase mb-4">
+                    <p className="font-press-start text-[9px] tracking-widest uppercase mb-4" style={{ color: '#D946EF' }}>
                         _projects
                     </p>
-                    <h1 className="font-grotesk font-bold text-5xl lg:text-7xl text-white uppercase mb-6">
-                        Featured
-                        <br />
-                        <span className="text-outline">Projects</span>
+                    <h1 className="font-vt323 text-6xl lg:text-8xl text-zinc-900 uppercase mb-6">
+                        FEATURED<br />
+                        <span className="text-outline-dark">PROJECTS</span>
                     </h1>
-                    <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
-                        A showcase of innovative solutions and creative applications
-                        built with modern technologies. Each project represents a
-                        unique challenge solved through careful engineering.
+                    <p className="font-space-mono text-sm max-w-2xl leading-relaxed" style={{ color: 'rgba(0,0,0,0.6)' }}>
+                        {/* A showcase of innovative solutions built with modern technologies. */}
+                        A showcase of innovative solutions built with modern technologies.
                     </p>
                 </div>
             </motion.section>
 
-            {/* Projects List — Large-scale vertical list inspired by tajmirul.site */}
+            {/* Projects List */}
             <section className="pb-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                initial={{ opacity: 0, y: 60, scaleX: 0.97 }}
+                                whileInView={{ opacity: 1, y: 0, scaleX: 1 }}
+                                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.23, 1, 0.32, 1] }}
                                 viewport={{ once: true }}
                                 onMouseEnter={() => setHoveredId(project.id)}
                                 onMouseLeave={() => setHoveredId(null)}
-                                className="group"
                             >
                                 <motion.div
-                                    className="bg-dark-surface border border-gray-800 rounded-2xl overflow-hidden transition-all duration-500"
                                     animate={{
-                                        opacity: hoveredId === null || hoveredId === project.id ? 1 : 0.3,
-                                        borderColor: hoveredId === project.id ? "rgba(0, 240, 80, 0.3)" : "rgba(55, 65, 81, 1)",
+                                        opacity: hoveredId === null || hoveredId === project.id ? 1 : 0.45,
                                     }}
-                                    whileHover={{
-                                        boxShadow: "0 0 30px rgba(0, 240, 80, 0.1)",
+                                    style={{
+                                        border: '2px solid',
+                                        borderColor: hoveredId === project.id ? '#D946EF' : 'rgba(217, 70, 239, 0.2)',
+                                        boxShadow: hoveredId === project.id ? '4px 4px 0px #D946EF' : 'none',
+                                        background: '#FFFFFF',
+                                        overflow: 'hidden',
+                                        transition: 'border-color 0.2s, box-shadow 0.2s',
                                     }}
                                 >
+                                    {/* Windows 98 Title Bar */}
+                                    <div className="win98-titlebar">
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-press-start text-[8px] text-zinc-900 opacity-80">
+                                                {String(index + 1).padStart(2, "0")}_{project.title.toUpperCase().replace(/ /g, "_")}.EXE
+                                            </span>
+                                        </div>
+                                        <div className="flex gap-1 items-center">
+                                            <div style={{ width: 10, height: 10, background: '#FFE600', borderRadius: 0 }} />
+                                            <div style={{ width: 10, height: 10, background: '#00FFFF', borderRadius: 0 }} />
+                                            <div style={{ width: 10, height: 10, background: '#FF4444', borderRadius: 0 }} />
+                                        </div>
+                                    </div>
+
+                                    {/* Card Body */}
                                     <div className="flex flex-col lg:flex-row">
                                         {/* Project Image */}
-                                        <div className="relative lg:w-2/5 overflow-hidden">
+                                        <div className="relative lg:w-2/5 overflow-hidden" style={{ borderRight: '1px solid rgba(217, 70, 239, 0.15)' }}>
                                             <motion.img
                                                 src={project.img}
                                                 alt={project.title}
-                                                className="w-full h-64 lg:h-full object-cover"
-                                                whileHover={{ scale: 1.05 }}
-                                                transition={{ duration: 0.6 }}
+                                                className="w-full h-56 lg:h-full object-cover"
+                                                whileHover={{ scale: 1.04, filter: 'hue-rotate(20deg) saturate(1.3) contrast(1.1)' }}
+                                                transition={{ duration: 0.5 }}
+                                                style={{ filter: 'saturate(0.85) contrast(1.1)' }}
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-dark-surface/80 hidden lg:block" />
-
+                                            {/* Scanline overlay on image */}
+                                            <div className="absolute inset-0 pointer-events-none" style={{
+                                                background: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 4px)',
+                                            }} />
+                                            <div className="absolute inset-0 hidden lg:block" style={{ background: 'linear-gradient(to right, transparent 70%, #FFFFFF)' }} />
                                             {/* Status Badge */}
-                                            <div className="absolute top-4 left-4">
-                                                <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${getStatusColor(project.status)}`}>
+                                            <div className="absolute top-3 left-3">
+                                                <span
+                                                    className="font-press-start text-[7px] uppercase tracking-wider px-2 py-1"
+                                                    style={getStatusStyle(project.status)}
+                                                >
                                                     {project.status}
                                                 </span>
                                             </div>
                                         </div>
 
                                         {/* Content */}
-                                        <div className="flex-1 p-8">
-                                            {/* Number + Title */}
-                                            <div className="flex items-baseline gap-4 mb-4">
-                                                <span className="text-neon-green/40 font-mono text-sm">
-                                                    _{String(index + 1).padStart(2, "0")}
-                                                </span>
-                                                <h3 className="font-grotesk font-bold text-2xl lg:text-3xl text-white uppercase group-hover:text-neon-green transition-colors duration-300">
-                                                    {project.title}
-                                                </h3>
-                                            </div>
+                                        <div className="flex-1 p-6 lg:p-8">
+                                            {/* Title */}
+                                            <h3
+                                                className="font-vt323 text-3xl lg:text-4xl uppercase mb-3 transition-colors duration-200"
+                                                style={{ color: hoveredId === project.id ? '#D946EF' : '#18181B' }}
+                                            >
+                                                {project.title}
+                                            </h3>
 
-                                            <p className="text-gray-500 mb-6 leading-relaxed text-sm lg:text-base line-clamp-3">
+                                            <p className="font-space-mono text-xs leading-relaxed mb-5 line-clamp-3" style={{ color: 'rgba(0,0,0,0.6)' }}>
                                                 {project.description}
                                             </p>
 
-                                            {/* Technologies */}
+                                            {/* Technologies — pixel badge tags */}
                                             <div className="flex flex-wrap gap-2 mb-6">
                                                 {project.technologies.map((tech, i) => (
                                                     <span
                                                         key={i}
-                                                        className="px-3 py-1 bg-gray-800 text-gray-400 rounded-lg text-xs font-medium border border-gray-700 hover:border-neon-green/30 hover:text-neon-green transition-all duration-300"
+                                                        className="font-space-mono text-[10px] px-2 py-1 uppercase tracking-wider"
+                                                        style={{
+                                                            color: tagColors[i % tagColors.length],
+                                                            border: `1px solid ${tagColors[i % tagColors.length]}40`,
+                                                            background: `${tagColors[i % tagColors.length]}08`,
+                                                        }}
                                                     >
                                                         {tech}
                                                     </span>
@@ -211,24 +237,51 @@ export default function Projects() {
                                                     href={project.github}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    whileHover={{ scale: 1.05 }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                    className="flex items-center gap-2 px-5 py-2.5 border border-gray-700 text-white rounded-lg hover:border-neon-green hover:text-neon-green transition-all duration-300 text-sm font-medium"
+                                                    whileHover={{ x: -1, y: -1 }}
+                                                    whileTap={{ scale: 0.97 }}
+                                                    className="flex items-center gap-2 font-space-mono text-xs uppercase tracking-wider px-4 py-2 transition-all duration-150"
+                                                    style={{
+                                                        border: '1px solid rgba(255,0,255,0.4)',
+                                                        color: 'rgba(255,0,255,0.7)',
+                                                        boxShadow: '2px 2px 0 rgba(255,0,255,0.3)',
+                                                    }}
+                                                    onMouseEnter={e => {
+                                                        e.currentTarget.style.borderColor = '#FF00FF';
+                                                        e.currentTarget.style.color = '#FF00FF';
+                                                        e.currentTarget.style.boxShadow = '3px 3px 0 #FF00FF';
+                                                    }}
+                                                    onMouseLeave={e => {
+                                                        e.currentTarget.style.borderColor = 'rgba(255,0,255,0.4)';
+                                                        e.currentTarget.style.color = 'rgba(255,0,255,0.7)';
+                                                        e.currentTarget.style.boxShadow = '2px 2px 0 rgba(255,0,255,0.3)';
+                                                    }}
                                                 >
-                                                    <FaGithub className="w-4 h-4" />
-                                                    Code
+                                                    <FaGithub className="w-3 h-3" />
+                                                    CODE
                                                 </motion.a>
                                                 {project.deployed && (
                                                     <motion.a
                                                         href={project.deployed}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(0, 240, 80, 0.4)" }}
-                                                        whileTap={{ scale: 0.95 }}
-                                                        className="flex items-center gap-2 px-5 py-2.5 bg-neon-green text-dark-bg rounded-lg font-bold text-sm uppercase tracking-wide"
+                                                        whileHover={{ x: -1, y: -1 }}
+                                                        whileTap={{ scale: 0.97 }}
+                                                        className="flex items-center gap-2 font-space-mono text-xs uppercase tracking-wider px-4 py-2 transition-all duration-150"
+                                                        style={{
+                                                            border: '2px solid #0891B2',
+                                                            color: '#0891B2',
+                                                            boxShadow: '3px 3px 0 #0891B2',
+                                                            background: 'transparent',
+                                                        }}
+                                                        onMouseEnter={e => {
+                                                            e.currentTarget.style.boxShadow = '5px 5px 0 #0891B2';
+                                                        }}
+                                                        onMouseLeave={e => {
+                                                            e.currentTarget.style.boxShadow = '3px 3px 0 #0891B2';
+                                                        }}
                                                     >
-                                                        <FiExternalLink className="w-4 h-4" />
-                                                        {["StudyForgeAI", "HireSignal"].includes(project.title) ? "DevPost" : "Live"}
+                                                        <FiExternalLink className="w-3 h-3" />
+                                                        {["StudyForgeAI", "HireSignal"].includes(project.title) ? "DEVPOST" : "LIVE"}
                                                     </motion.a>
                                                 )}
                                             </div>
@@ -250,36 +303,45 @@ export default function Projects() {
                 viewport={{ once: true }}
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    <div className="bg-dark-surface border border-gray-800 rounded-2xl p-12 relative overflow-hidden">
+                    <div
+                        className="p-12 relative overflow-hidden"
+                        style={{
+                            background: '#1A0033',
+                            border: '2px solid #FF00FF',
+                            boxShadow: '6px 6px 0 #FF00FF',
+                        }}
+                    >
                         {/* Glow effect */}
-                        <div className="absolute -top-20 -right-20 w-60 h-60 bg-neon-green/5 rounded-full blur-3xl" />
+                        <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(255,0,255,0.05)' }} />
 
-                        <h2 className="font-grotesk font-bold text-4xl lg:text-5xl text-white uppercase mb-6 relative z-10">
-                            Want to <span className="text-neon-green">Collaborate</span>?
+                        <h2 className="font-vt323 text-4xl lg:text-5xl text-white uppercase mb-6 relative z-10">
+                            WANT TO <span style={{ color: '#FF00FF' }}>COLLABORATE</span>?
                         </h2>
-                        <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-xl mx-auto relative z-10">
-                            I&apos;m always excited to work on new projects and bring
-                            innovative ideas to life. Let&apos;s build something amazing
-                            together.
+                        <p className="font-space-mono text-sm mb-10 leading-relaxed max-w-xl mx-auto relative z-10" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                            {"// I'm always excited to work on new projects and bring"}
+                            <br />
+                            {"// innovative ideas to life. Let's build something amazing."}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
                             <motion.a
                                 href="mailto:yuvamk.swe@gmail.com"
-                                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(0, 240, 80, 0.5)" }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-neon-green text-dark-bg font-bold rounded-lg uppercase tracking-wider text-sm"
+                                whileHover={{ x: -2, y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="font-press-start text-[9px] uppercase tracking-wider px-8 py-4 pixel-border"
+                                style={{ color: '#FF00FF', background: 'transparent' }}
                             >
-                                Start a Project
+                                START A PROJECT
                             </motion.a>
                             <motion.a
                                 href="https://github.com/YuvamKumarSWE"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05, borderColor: "#00F050" }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 border border-gray-600 text-white font-bold rounded-lg hover:text-neon-green transition-all duration-300 uppercase tracking-wider text-sm"
+                                whileHover={{ x: -2, y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="font-press-start text-[9px] uppercase tracking-wider px-8 py-4 pixel-border-cyan"
+                                style={{ color: '#00FFFF', background: 'transparent' }}
                             >
-                                View All Projects
+                                VIEW ALL
                             </motion.a>
                         </div>
                     </div>

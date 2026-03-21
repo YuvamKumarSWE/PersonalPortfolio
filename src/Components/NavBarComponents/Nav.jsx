@@ -201,7 +201,8 @@ export default function Nav() {
                                                     <span>{item.name}</span>
                                                     {isActive && (
                                                         <motion.div
-                                                            className="w-2 h-2 bg-neon-green rounded-full"
+                                                            className="w-2 h-2 blink"
+                                            style={{ background: '#FF00FF', borderRadius: 0 }}
                                                             initial={{ scale: 0 }}
                                                             animate={{ scale: 1 }}
                                                             transition={{ type: "spring", stiffness: 500, damping: 30 }}

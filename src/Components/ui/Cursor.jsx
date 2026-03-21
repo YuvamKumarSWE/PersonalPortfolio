@@ -20,7 +20,6 @@ const Cursor = () => {
         };
 
         const handleMouseOver = (e) => {
-            // Check if hovering over clickable elements
             if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
                 setIsHovering(true);
             } else {
@@ -39,30 +38,61 @@ const Cursor = () => {
 
     if (!isDesktop) return null;
 
+    const color = isHovering ? '#00FFFF' : '#FF00FF';
+    const size = isHovering ? 1.4 : 1;
+
     return (
         <>
-            {/* Main Cursor (Dot) */}
+            {/* Horizontal bar of crosshair */}
             <motion.div
-                className="fixed top-0 left-0 w-3 h-3 bg-neon-green rounded-full pointer-events-none z-[9999] mix-blend-difference"
+                className="fixed top-0 left-0 pointer-events-none z-[9999]"
                 animate={{
-                    x: mousePosition.x - 6,
-                    y: mousePosition.y - 6,
-                    scale: isHovering ? 0 : 1
+                    x: mousePosition.x - 10,
+                    y: mousePosition.y - 1,
+                    scaleX: size,
+                    backgroundColor: color,
                 }}
-                transition={{ type: "spring", stiffness: 500, damping: 28 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+                style={{
+                    width: '20px',
+                    height: '2px',
+                    imageRendering: 'pixelated',
+                    mixBlendMode: 'difference',
+                }}
             />
-
-            {/* Trailing Cursor (Ring) */}
+            {/* Vertical bar of crosshair */}
             <motion.div
-                className="fixed top-0 left-0 w-10 h-10 border border-white rounded-full pointer-events-none z-[9998] mix-blend-difference"
+                className="fixed top-0 left-0 pointer-events-none z-[9999]"
                 animate={{
-                    x: mousePosition.x - 20,
-                    y: mousePosition.y - 20,
-                    scale: isHovering ? 1.5 : 1,
-                    backgroundColor: isHovering ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
-                    borderColor: isHovering ? 'transparent' : 'white'
+                    x: mousePosition.x - 1,
+                    y: mousePosition.y - 10,
+                    scaleY: size,
+                    backgroundColor: color,
                 }}
-                transition={{ type: "spring", stiffness: 250, damping: 20 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+                style={{
+                    width: '2px',
+                    height: '20px',
+                    imageRendering: 'pixelated',
+                    mixBlendMode: 'difference',
+                }}
+            />
+            {/* Center pixel */}
+            <motion.div
+                className="fixed top-0 left-0 pointer-events-none z-[9999]"
+                animate={{
+                    x: mousePosition.x - 2,
+                    y: mousePosition.y - 2,
+                    backgroundColor: color,
+                    scale: isHovering ? 1.5 : 1,
+                }}
+                transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+                style={{
+                    width: '4px',
+                    height: '4px',
+                    imageRendering: 'pixelated',
+                    mixBlendMode: 'difference',
+                }}
             />
         </>
     );

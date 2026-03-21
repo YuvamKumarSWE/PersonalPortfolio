@@ -1,4 +1,3 @@
-import IconCloud from "./ui/icon-cloud";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import ScrollProgress from "./ui/ScrollProgress";
 import { useRef, useEffect, useState } from "react";
@@ -20,6 +19,21 @@ import {
 import { BiLogoPostgresql } from "react-icons/bi";
 import { TbSql } from "react-icons/tb";
 
+const MARQUEE_ITEMS = [
+  "> SOFTWARE DEVELOPER",
+  "> FULL-STACK ENGINEER",
+  "> CS @ UBC",
+  "> REACT",
+  "> JAVA",
+  "> PYTHON",
+  "> AWS",
+  "> SPRING BOOT",
+  "> MONGODB",
+  "> DOCKER",
+  "> CI/CD",
+  "> REST APIS",
+];
+
 export default function LandingPage() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,7 +44,7 @@ export default function LandingPage() {
   const heroScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.95]);
   const heroY = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
-  // Mouse parallax for hero ambient glow
+  // Mouse parallax
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
@@ -45,8 +59,8 @@ export default function LandingPage() {
     return () => window.removeEventListener("mousemove", handleMouse);
   }, [mouseX, mouseY]);
 
-  // Typing effect for role
-  const roles = ["Software Developer", "Full-Stack Engineer", "CS @ UBC"];
+  // Typing effect
+  const roles = ["SOFTWARE DEVELOPER", "FULL-STACK ENGINEER", "CS @ UBC"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -67,7 +81,7 @@ export default function LandingPage() {
     return () => clearTimeout(timeout);
   }, [displayed, isDeleting, roleIndex]);
 
-  // Letter-by-letter animation
+  // Letter animation
   const letterVariants = {
     hidden: { opacity: 0, y: 80, rotateX: -90 },
     visible: (i) => ({
@@ -77,11 +91,11 @@ export default function LandingPage() {
   };
   const nameLetters = "YUVAM KUMAR".split("");
 
-  // Skill categories
+  // Skill categories — Y2K accent colors
   const skillCategories = [
     {
       title: "Languages",
-      accent: "#00F050",
+      accent: "#FF00FF",
       items: [
         { skill: "JavaScript", Icon: IoLogoJavascript },
         { skill: "TypeScript", Icon: SiTypescript },
@@ -95,7 +109,7 @@ export default function LandingPage() {
     },
     {
       title: "Frameworks & Libraries",
-      accent: "#00C8FF",
+      accent: "#00FFFF",
       items: [
         { skill: "Spring Boot", Icon: SiSpringboot },
         { skill: "Node.js", Icon: FaNode },
@@ -120,7 +134,7 @@ export default function LandingPage() {
     },
     {
       title: "Databases",
-      accent: "#A855F7",
+      accent: "#FFE600",
       items: [
         { skill: "MongoDB", Icon: SiMongodb },
         { skill: "PostgreSQL", Icon: BiLogoPostgresql },
@@ -132,7 +146,7 @@ export default function LandingPage() {
     },
     {
       title: "Developer Tools & Others",
-      accent: "#F97316",
+      accent: "#FF6600",
       items: [
         { skill: "Git", Icon: FaGitAlt },
         { skill: "GitHub", Icon: FaGithub },
@@ -148,18 +162,36 @@ export default function LandingPage() {
     },
   ];
 
-  const slugs = [
-    "typescript", "javascript", "react", "angular", "java",
-    "html5", "css3", "nodedotjs", "express", "fastapi",
-    "amazonaws", "postgresql", "mysql", "mongodb", "supabase",
-    "git", "github", "docker", "python", "spring",
-    "springboot", "langchain", "apachemaven", "jira",
-    "numpy", "pandas", "scikitlearn", "selenium", "junit5",
-    "bootstrap", "tailwindcss", "linux", "githubactions",
+  // Contact cards with Y2K colors and window chrome
+  const contactCards = [
+    {
+      label: "EMAIL.EXE",
+      value: "yuvamk.swe@gmail.com",
+      desc: "Best way to reach me",
+      href: "mailto:yuvamk.swe@gmail.com",
+      accent: "#FF00FF",
+      borderClass: "pixel-border",
+    },
+    {
+      label: "GITHUB.EXE",
+      value: "@YuvamKumarSWE",
+      desc: "Browse my code",
+      href: "https://github.com/YuvamKumarSWE",
+      accent: "#00FFFF",
+      borderClass: "pixel-border-cyan",
+    },
+    {
+      label: "LINKEDIN.EXE",
+      value: "/in/yuvamkumar",
+      desc: "Connect with me",
+      href: "https://www.linkedin.com/in/yuvamkumar/",
+      accent: "#FFE600",
+      borderClass: "pixel-border-yellow",
+    },
   ];
 
   return (
-    <div className="min-h-screen noise-overlay">
+    <div className="min-h-screen">
       <ScrollProgress />
 
       {/* ========================================= */}
@@ -170,29 +202,29 @@ export default function LandingPage() {
         className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
         style={{ opacity: heroOpacity, scale: heroScale, y: heroY }}
       >
-        {/* Subtle grid overlay */}
-        <div className="absolute inset-0 z-0 opacity-[0.03]">
+        {/* Y2K grid overlay — magenta tinted */}
+        <div className="absolute inset-0 z-0 opacity-[0.04]">
           <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px',
+            backgroundImage: `linear-gradient(rgba(255,0,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,255,0.3) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
           }} />
         </div>
 
-        {/* Mouse-following ambient glow */}
+        {/* Mouse-following ambient glow — magenta */}
         <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full pointer-events-none z-0"
+          className="absolute w-[600px] h-[600px] pointer-events-none z-0"
           style={{
             x: springX, y: springY,
-            background: "radial-gradient(circle, rgba(0, 240, 80, 0.07) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(255, 0, 255, 0.07) 0%, transparent 70%)",
             top: "20%", left: "30%",
           }}
         />
         <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full pointer-events-none z-0"
+          className="absolute w-[400px] h-[400px] pointer-events-none z-0"
           style={{
             x: useTransform(springX, v => -v * 1.5),
             y: useTransform(springY, v => -v * 1.5),
-            background: "radial-gradient(circle, rgba(0, 200, 255, 0.04) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(0, 255, 255, 0.04) 0%, transparent 70%)",
             bottom: "10%", right: "20%",
           }}
         />
@@ -206,21 +238,24 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-neon-green font-mono text-xs sm:text-sm tracking-[0.4em] uppercase">
-              &lt;hello world /&gt;
+            <span className="font-press-start text-[10px] tracking-widest uppercase phosphor-magenta" style={{ color: '#FF00FF' }}>
+              &lt;hello_world /&gt;
             </span>
           </motion.div>
 
-          {/* Giant Name — letter-by-letter 3D flip */}
+          {/* Giant Name — VT323 pixel font with glitch */}
           <div className="overflow-hidden mb-4">
             <motion.h1
-              className="font-grotesk font-bold text-[12vw] sm:text-[10vw] lg:text-[9vw] leading-[0.85] tracking-tight text-white whitespace-nowrap"
-              style={{ perspective: 1000 }}
+              className="font-vt323 leading-[0.9] tracking-tight text-zinc-900 whitespace-nowrap"
+              style={{
+                fontSize: 'clamp(4rem, 14vw, 13rem)',
+                perspective: 1000,
+              }}
             >
               {nameLetters.map((letter, i) => (
                 <motion.span
                   key={i}
-                  className={`inline-block ${letter === " " ? "mr-[3vw]" : ""} glitch`}
+                  className={`inline-block ${letter === " " ? "mr-[2vw]" : ""} glitch`}
                   data-text={letter}
                   custom={i}
                   variants={letterVariants}
@@ -233,28 +268,29 @@ export default function LandingPage() {
             </motion.h1>
           </div>
 
-          {/* Typing role */}
+          {/* Typing role — Space Mono, uppercase */}
           <motion.div
             className="mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-500 font-light">
-              <span className="gradient-text font-grotesk font-medium">{displayed}</span>
-              <span className="text-neon-green animate-pulse">|</span>
+            <p className="font-space-mono text-base sm:text-lg lg:text-xl tracking-widest" style={{ color: 'rgba(0,0,0,0.5)' }}>
+              <span className="gradient-text-y2k font-bold">{displayed}</span>
+              <span className="blink" style={{ color: '#D946EF' }}>_</span>
             </p>
           </motion.div>
 
           {/* Description */}
           <motion.p
-            className="text-gray-500 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="font-space-mono text-xs sm:text-sm max-w-xl mx-auto mb-10 leading-relaxed"
+            style={{ color: 'rgba(0,0,0,0.6)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 0.8 }}
           >
-            I build innovative digital experiences with modern technologies and clean architecture.
-            Passionate about turning complex problems into elegant solutions.
+            {"// building innovative digital experiences"}<br />
+            {"// with modern technologies and clean architecture"}
           </motion.p>
 
           {/* CTA + Social Row */}
@@ -266,20 +302,22 @@ export default function LandingPage() {
           >
             <motion.a
               href="mailto:yuvamk.swe@gmail.com"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3.5 bg-neon-green text-dark-bg font-bold rounded-lg uppercase tracking-wider text-sm glow-pulse"
+              whileHover={{ x: -2, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="holo-border font-press-start text-[9px] uppercase tracking-wider px-6 py-3 font-bold"
+              style={{ color: '#FF00FF', background: 'transparent' }}
             >
-              Get In Touch
+              GET IN TOUCH
             </motion.a>
             <motion.a
               href="https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing"
               target="_blank" rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, borderColor: "#00F050" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3.5 border border-gray-700 text-white font-bold rounded-lg hover:text-neon-green transition-all duration-300 uppercase tracking-wider text-sm"
+              whileHover={{ x: -2, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="font-press-start text-[9px] uppercase tracking-wider px-6 py-3"
+              style={{ color: '#0891B2', background: 'transparent', border: '2px solid #0891B2', boxShadow: '4px 4px 0px #0891B2' }}
             >
-              View Resume
+              VIEW RESUME
             </motion.a>
 
             <div className="flex items-center gap-3">
@@ -293,11 +331,12 @@ export default function LandingPage() {
                   href={s.href}
                   target={s.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-gray-800 rounded-full hover:border-neon-green hover:bg-neon-green/5 transition-all duration-300 group"
-                  whileHover={{ scale: 1.15, y: -2 }}
+                  className="w-9 h-9 flex items-center justify-center transition-all duration-150"
+                  style={{ border: '1px solid rgba(255,0,255,0.3)', color: 'rgba(255,0,255,0.5)' }}
+                  whileHover={{ scale: 1.1, x: -1, y: -1, borderColor: '#FF00FF', color: '#FF00FF', boxShadow: '2px 2px 0 #FF00FF' }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="text-gray-500 group-hover:text-neon-green transition-colors" viewBox="0 0 16 16">{s.svg}</svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">{s.svg}</svg>
                 </motion.a>
               ))}
             </div>
@@ -313,19 +352,51 @@ export default function LandingPage() {
             transition={{ delay: 2.5 }}
           >
             <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-              <span className="text-gray-600 text-[10px] uppercase tracking-[0.4em] font-mono">scroll</span>
-              <div className="w-px h-8 bg-gradient-to-b from-neon-green/50 to-transparent mx-auto mt-2" />
+              <span className="font-press-start text-[8px] uppercase tracking-widest" style={{ color: 'rgba(255,0,255,0.4)' }}>scroll</span>
+              <div className="w-px h-8 mx-auto mt-2" style={{ background: 'linear-gradient(to bottom, rgba(255,0,255,0.5), transparent)' }} />
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Decorative corner accents */}
-        <div className="absolute top-24 left-8 w-20 h-20 border-l border-t border-gray-800/50 hidden lg:block" />
-        <div className="absolute bottom-8 right-8 w-20 h-20 border-r border-b border-gray-800/50 hidden lg:block" />
+        {/* Floating tech decoratives */}
+        <div className="absolute top-[14%] right-[7%] font-space-mono text-xs hidden lg:block animate-pixel-float" style={{ color: '#00FFFF', opacity: 0.18, animationDelay: '0s', animationDuration: '4s' }}>0xFF2A3C</div>
+        <div className="absolute top-[38%] left-[4%] font-space-mono text-xs hidden lg:block animate-pixel-float" style={{ color: '#FF00FF', opacity: 0.15, animationDelay: '1.5s', animationDuration: '5s' }}>0x0D001A</div>
+        <div className="absolute top-[65%] right-[5%] font-space-mono text-xs hidden lg:block animate-pixel-float" style={{ color: '#FFE600', opacity: 0.12, animationDelay: '0.8s', animationDuration: '4.5s' }}>0xFFE600</div>
+        <div className="absolute top-[22%] left-[7%] font-space-mono text-[9px] hidden lg:block animate-pixel-float leading-tight" style={{ color: '#FF1493', opacity: 0.12, animationDelay: '2s', animationDuration: '6s' }}>
+          {'┌────┐'}<br/>{'│ YK │'}<br/>{'└────┘'}
+        </div>
+        <div className="absolute bottom-[25%] left-[6%] font-space-mono text-[9px] hidden lg:block tracking-widest" style={{ color: '#FF00FF', opacity: 0.08 }}>
+          01011001 01110101 01110110 01100001 01101101
+        </div>
+        <div className="absolute bottom-[35%] right-[9%] font-space-mono text-[9px] hidden lg:block animate-pixel-float" style={{ color: '#00FF41', opacity: 0.12, animationDelay: '3s', animationDuration: '5.5s' }}>
+          {'> INIT_COMPLETE'}<br/>{'> STATUS: ONLINE'}
+        </div>
+
+        {/* Y2K corner accents */}
+        <div className="absolute top-24 left-8 w-16 h-16 hidden lg:block" style={{ borderLeft: '2px solid rgba(255,0,255,0.3)', borderTop: '2px solid rgba(255,0,255,0.3)' }} />
+        <div className="absolute bottom-8 right-8 w-16 h-16 hidden lg:block" style={{ borderRight: '2px solid rgba(0,255,255,0.3)', borderBottom: '2px solid rgba(0,255,255,0.3)' }} />
       </motion.section>
 
       {/* ========================================= */}
-      {/*          SKILLS SECTION (STATIC GRID)     */}
+      {/*              MARQUEE STRIP                */}
+      {/* ========================================= */}
+      <div className="w-full overflow-hidden border-y" style={{ borderColor: 'rgba(255,0,255,0.2)', background: 'rgba(255,0,255,0.03)', padding: '12px 0' }}>
+        <div className="marquee-track font-press-start text-[9px] tracking-widest" style={{ color: 'rgba(255,0,255,0.6)' }}>
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
+            <span key={i} className="mx-8 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+      <div className="w-full overflow-hidden" style={{ padding: '10px 0', background: 'rgba(0,255,255,0.02)' }}>
+        <div className="marquee-track-reverse font-space-mono text-[10px] tracking-widest" style={{ color: 'rgba(0,255,255,0.35)' }}>
+          {[...MARQUEE_ITEMS.slice().reverse(), ...MARQUEE_ITEMS.slice().reverse()].map((item, i) => (
+            <span key={i} className="mx-8 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* ========================================= */}
+      {/*              SKILLS SECTION               */}
       {/* ========================================= */}
       <motion.section
         className="py-28 px-6 relative"
@@ -333,44 +404,30 @@ export default function LandingPage() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
+        style={{ background: 'radial-gradient(ellipse at top left, rgba(255,0,255,0.06) 0%, transparent 60%)' }}
       >
-        {/* Section divider */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-neon-green/30 to-transparent" />
+        {/* ASCII Divider */}
+        <div className="ascii-divider text-sm mb-12">✦·.·´¯`·.·✦ SKILLS ✦·.·´¯`·.·✦</div>
 
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
-            className="mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div>
-              <p className="text-neon-green font-mono text-xs tracking-[0.4em] uppercase mb-4">
-                _tech_stack
-              </p>
-              <h2 className="font-grotesk font-bold text-4xl lg:text-6xl text-white">
-                Technical<br />
-                <span className="text-outline">Expertise</span>
-              </h2>
-            </div>
-            {/* Icon Cloud — positioned at header level on large screens */}
-            <motion.div
-              className="w-48 h-48 flex-shrink-0 hidden lg:flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, type: "spring" }}
-              viewport={{ once: true }}
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-neon-green/5 rounded-full blur-3xl" />
-                <IconCloud iconSlugs={slugs} />
-              </div>
-            </motion.div>
+            <p className="font-press-start text-[9px] tracking-widest uppercase mb-4 phosphor-magenta" style={{ color: '#D946EF' }}>
+              _tech_stack
+            </p>
+            <h2 className="font-vt323 text-5xl lg:text-7xl text-zinc-900">
+              TECHNICAL<br />
+              <span className="text-outline-dark">EXPERTISE</span>
+            </h2>
           </motion.div>
 
-          {/* Skill Categories — Full Width Rows */}
+          {/* Skill Categories */}
           <div className="space-y-6">
             {skillCategories.map((cat, catIndex) => (
               <motion.div
@@ -379,61 +436,59 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: catIndex * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-dark-surface/50 border border-gray-800/60 rounded-2xl p-6 lg:p-8 backdrop-blur-sm hover:border-gray-700/80 transition-all duration-500 group"
+                className="p-6 lg:p-8 dither-pattern"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.9)',
+                  border: `2px solid ${cat.accent}40`,
+                  boxShadow: `4px 4px 0px ${cat.accent}30`,
+                }}
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div
-                    className="w-2.5 h-2.5 rounded-full"
-                    style={{ backgroundColor: cat.accent, boxShadow: `0 0 12px ${cat.accent}40` }}
+                    className="w-2 h-2 blink"
+                    style={{ backgroundColor: cat.accent }}
                   />
-                  <h3 className="text-sm font-bold text-gray-300 uppercase tracking-[0.15em]">{cat.title}</h3>
-                  <div className="flex-1 h-px bg-gray-800/80" />
+                  <h3 className="font-press-start text-[9px] uppercase tracking-widest" style={{ color: cat.accent }}>{cat.title}</h3>
+                  <div className="flex-1 h-px" style={{ background: `${cat.accent}30` }} />
                 </div>
 
                 {/* Skill Items */}
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex flex-wrap gap-2">
                   {cat.items.map((item, index) => (
                     <motion.div
                       key={index}
-                      whileHover={{
-                        scale: 1.06,
-                        y: -3,
-                        boxShadow: `0 4px 20px ${cat.accent}15`,
+                      whileHover={{ x: -1, y: -1 }}
+                      className="flex items-center gap-2 px-3 py-2 font-space-mono text-[11px] transition-all duration-150"
+                      style={{
+                        background: 'rgba(240,240,240,0.8)',
+                        border: `1px solid ${cat.accent}30`,
+                        color: 'rgba(0,0,0,0.6)',
                       }}
-                      className="flex items-center gap-2.5 px-4 py-2.5 bg-gray-900/60 rounded-xl border border-gray-800/60 hover:border-gray-600 transition-all duration-300 group/item"
+                      onMouseEnter={e => {
+                        e.currentTarget.style.borderColor = cat.accent;
+                        e.currentTarget.style.color = cat.accent;
+                        e.currentTarget.style.boxShadow = `2px 2px 0 ${cat.accent}`;
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.borderColor = `${cat.accent}30`;
+                        e.currentTarget.style.color = 'rgba(0,0,0,0.6)';
+                        e.currentTarget.style.boxShadow = 'none';
+                      }}
                     >
-                      <item.Icon
-                        className="text-base text-gray-500 group-hover/item:text-white transition-colors duration-300"
-                      />
-                      <span className="font-medium text-xs text-gray-400 group-hover/item:text-white transition-colors duration-300 whitespace-nowrap">
-                        {item.skill}
-                      </span>
+                      <item.Icon className="text-sm" />
+                      <span className="whitespace-nowrap">{item.skill}</span>
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Mobile Icon Cloud */}
-          <motion.div
-            className="flex justify-center mt-16 lg:hidden"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, type: "spring" }}
-            viewport={{ once: true }}
-          >
-            <div className="relative w-56 h-56 flex items-center justify-center">
-              <div className="absolute inset-0 bg-neon-green/5 rounded-full blur-3xl" />
-              <IconCloud iconSlugs={slugs} />
-            </div>
-          </motion.div>
         </div>
       </motion.section>
 
       {/* ========================================= */}
-      {/*              ABOUT SECTION                */}
+      {/*              CONTACT SECTION              */}
       {/* ========================================= */}
       <motion.section
         className="py-28 px-6 relative"
@@ -441,40 +496,60 @@ export default function LandingPage() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
+        style={{ background: 'radial-gradient(ellipse at bottom right, rgba(0,255,255,0.05) 0%, transparent 60%)' }}
       >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-neon-green/30 to-transparent" />
+        {/* ASCII Divider */}
+        <div className="ascii-divider text-sm mb-12 phosphor-cyan" style={{ color: '#00FFFF' }}>✦·.·´¯`·.·✦ CONTACT ✦·.·´¯`·.·✦</div>
 
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 40 }}
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <p className="text-neon-green font-mono text-xs tracking-[0.4em] uppercase mb-4">_about</p>
-            <h2 className="font-grotesk font-bold text-4xl lg:text-6xl text-white mb-8">
-              About <span className="text-outline">Me</span>
+            <p className="font-press-start text-[9px] tracking-widest uppercase mb-4 phosphor-magenta" style={{ color: '#D946EF' }}>_contact</p>
+            <h2 className="font-vt323 text-5xl lg:text-7xl text-zinc-900">
+              GET IN <span className="text-outline-dark">TOUCH</span>
             </h2>
           </motion.div>
 
-          <motion.div
-            className="bg-dark-surface/50 border border-gray-800/50 rounded-2xl p-8 lg:p-12 backdrop-blur-sm"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ borderColor: "rgba(0, 240, 80, 0.15)" }}
-          >
-            <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
-              As a dedicated Computer Science student and full-stack developer at{" "}
-              <span className="text-white font-medium">UBC</span>,
-              I thrive on turning complex problems into elegant solutions. My
-              journey in software engineering is driven by curiosity, creativity,
-              and a commitment to building technology that makes a{" "}
-              <span className="text-neon-green font-medium">meaningful impact</span>.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {contactCards.map((contact, i) => (
+              <motion.a
+                key={i}
+                href={contact.href}
+                target={contact.href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className={`block ${contact.borderClass} transition-all duration-150`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Windows 98 title bar */}
+                <div className="win98-titlebar">
+                  <span className="font-press-start text-[8px] text-white">{contact.label}</span>
+                  <div className="flex gap-1">
+                    <div className="win98-dot" style={{ width: 8, height: 8, background: '#FFE600' }} />
+                    <div className="win98-dot" style={{ width: 8, height: 8, background: '#00FFFF' }} />
+                    <div className="win98-dot" style={{ width: 8, height: 8, background: '#FF4444' }} />
+                  </div>
+                </div>
+                {/* Card content */}
+                <div className="p-6" style={{ background: '#FFFFFF' }}>
+                  <div
+                    className="w-2 h-2 mb-4 blink"
+                    style={{ backgroundColor: contact.accent }}
+                  />
+                  <p className="font-space-mono text-xs uppercase tracking-widest mb-1" style={{ color: 'rgba(0,0,0,0.5)' }}>{contact.label.replace('.EXE', '')}</p>
+                  <p className="font-space-mono font-bold text-sm mb-1 text-zinc-900">{contact.value}</p>
+                  <p className="font-space-mono text-xs" style={{ color: 'rgba(0,0,0,0.6)' }}>{contact.desc}</p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </motion.section>
 
@@ -488,37 +563,46 @@ export default function LandingPage() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
+        {/* ASCII Divider */}
+        <div className="ascii-divider text-sm mb-16">✦·.·´¯`·.·✦ ✦·.·´¯`·.·✦</div>
+
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
-            className="font-grotesk font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
+            className="font-vt323 text-4xl sm:text-5xl lg:text-6xl text-zinc-900 mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Let&apos;s build something <span className="gradient-text">amazing</span>.
+            LET&apos;S BUILD SOMETHING <span className="gradient-text-y2k">AMAZING</span>.
           </motion.h2>
           <motion.p
-            className="text-gray-500 mb-8"
+            className="font-space-mono text-xs mb-10"
+            style={{ color: 'rgba(0,0,0,0.5)' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Always open to exciting projects and collaborations.
+            {"// always open to exciting projects and collaborations"}
           </motion.p>
           <motion.a
             href="mailto:yuvamk.swe@gmail.com"
-            className="inline-block px-10 py-4 bg-neon-green text-dark-bg font-bold rounded-lg uppercase tracking-wider text-sm glow-pulse"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-block pixel-border font-press-start text-[9px] uppercase tracking-wider px-8 py-4 glow-magenta"
+            style={{ color: '#FF00FF', background: 'transparent' }}
+            whileHover={{ x: -2, y: -2 }}
+            whileTap={{ scale: 0.97 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Say Hello →
+            SAY HELLO →
           </motion.a>
+
+          <div className="mt-16 font-space-mono text-xs" style={{ color: 'rgba(255,0,255,0.25)' }}>
+            {"// EOF — YUVAM KUMAR PORTFOLIO v2.0"}
+          </div>
         </div>
       </motion.section>
     </div>
