@@ -1,5 +1,6 @@
 /* Y2K / Retro Internet Theme */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import './styles/ie-theme.css';
 
 @tailwind base;
 @tailwind components;
@@ -9,23 +10,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: none;
-}
-
-a,
-button,
-[role="button"] {
-    cursor: none;
 }
 
 body {
     font-family: 'Space Mono', monospace;
     line-height: 1.6;
     color: #18181B;
-    background-color: #FAFAFA;
+    background-color: #008080;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* Custom Selection Color */

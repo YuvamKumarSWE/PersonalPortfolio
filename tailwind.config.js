@@ -18,6 +18,13 @@ export default {
 				roboto: ['Roboto', 'sans-serif'],
 			},
 			colors: {
+				// IE5/6 palette
+				'ie-silver':   '#C0C0C0',
+				'ie-face':     '#D4D0C8',
+				'ie-navy':     '#000080',
+				'ie-content':  '#FFFFFF',
+				'ie-shadow':   '#808080',
+				'ie-teal':     '#008080',
 				// Y2K palette - Light Mode
 				'y2k-bg':      '#FAFAFA',
 				'y2k-surface': '#F4F4F5',

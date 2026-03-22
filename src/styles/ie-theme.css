@@ -1,0 +1,884 @@
+/* ================================================== */
+/* IE 5/6 Browser Shell Theme                        */
+/* Classic Internet Explorer window chrome           */
+/* ================================================== */
+
+:root {
+  --ie-silver:        #C0C0C0;
+  --ie-button-face:   #D4D0C8;
+  --ie-highlight:     #FFFFFF;
+  --ie-shadow:        #808080;
+  --ie-dk-shadow:     #404040;
+  --ie-title-start:   #000080;
+  --ie-title-end:     #1084D0;
+  --ie-content-bg:    #FFFFFF;
+  --ie-link:          #0000EE;
+  --ie-visited:       #551A8B;
+  --ie-desktop-teal:  #008080;
+  --ie-font:          Tahoma, Verdana, Arial, sans-serif;
+}
+
+/* -------------------------------------------------- */
+/* OUTER WINDOW FRAME                                 */
+/* -------------------------------------------------- */
+
+.ie-window-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: var(--ie-button-face);
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-dk-shadow);
+  border-bottom: 2px solid var(--ie-dk-shadow);
+  font-family: var(--ie-font);
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------- */
+/* TITLE BAR                                          */
+/* -------------------------------------------------- */
+
+.ie-titlebar {
+  background: linear-gradient(90deg, var(--ie-title-start) 0%, var(--ie-title-end) 100%);
+  color: #FFFFFF;
+  font-family: var(--ie-font);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 4px 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ie-titlebar-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ie-titlebar-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.ie-titlebar-controls {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ie-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+  background: var(--ie-button-face);
+  color: #000000;
+  border-top:    1px solid var(--ie-highlight);
+  border-left:   1px solid var(--ie-highlight);
+  border-right:  1px solid var(--ie-shadow);
+  border-bottom: 1px solid var(--ie-shadow);
+  cursor: default;
+  line-height: 1;
+}
+
+.ie-titlebar-btn:active {
+  border-top:    1px solid var(--ie-shadow);
+  border-left:   1px solid var(--ie-shadow);
+  border-right:  1px solid var(--ie-highlight);
+  border-bottom: 1px solid var(--ie-highlight);
+}
+
+/* -------------------------------------------------- */
+/* MENU BAR                                           */
+/* -------------------------------------------------- */
+
+.ie-menubar {
+  background: var(--ie-button-face);
+  border-bottom: 1px solid var(--ie-shadow);
+  display: flex;
+  align-items: stretch;
+  padding: 1px 2px;
+  flex-shrink: 0;
+}
+
+.ie-menu-item {
+  font-family: var(--ie-font);
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.ie-menu-item:hover {
+  background: #000080;
+  color: #FFFFFF;
+}
+
+/* -------------------------------------------------- */
+/* TOOLBAR                                            */
+/* -------------------------------------------------- */
+
+.ie-toolbar {
+  background: var(--ie-button-face);
+  border-bottom: 1px solid var(--ie-shadow);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.ie-toolbar-separator {
+  width: 1px;
+  height: 22px;
+  background: var(--ie-shadow);
+  margin: 0 3px;
+  flex-shrink: 0;
+}
+
+.ie-toolbar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 2px 4px;
+  font-family: var(--ie-font);
+  font-size: 9px;
+  color: #000000;
+  background: var(--ie-button-face);
+  border: 1px solid transparent;
+  cursor: default;
+  gap: 1px;
+}
+
+.ie-toolbar-btn:hover:not(.ie-toolbar-btn-disabled) {
+  border-top:    1px solid var(--ie-highlight);
+  border-left:   1px solid var(--ie-highlight);
+  border-right:  1px solid var(--ie-shadow);
+  border-bottom: 1px solid var(--ie-shadow);
+}
+
+.ie-toolbar-btn:active:not(.ie-toolbar-btn-disabled) {
+  border-top:    1px solid var(--ie-shadow);
+  border-left:   1px solid var(--ie-shadow);
+  border-right:  1px solid var(--ie-highlight);
+  border-bottom: 1px solid var(--ie-highlight);
+}
+
+.ie-toolbar-btn-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.ie-toolbar-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ie-toolbar-label {
+  font-size: 9px;
+  font-family: var(--ie-font);
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------- */
+/* ADDRESS BAR                                        */
+/* -------------------------------------------------- */
+
+.ie-addressbar {
+  background: var(--ie-button-face);
+  border-bottom: 1px solid var(--ie-shadow);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ie-addressbar-label {
+  font-family: var(--ie-font);
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ie-addressbar-input {
+  flex: 1;
+  font-family: var(--ie-font);
+  font-size: 12px;
+  padding: 1px 3px;
+  background: #FFFFFF;
+  color: #000000;
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+  outline: none;
+  min-width: 0;
+}
+
+.ie-go-btn {
+  font-family: var(--ie-font);
+  font-size: 11px;
+  padding: 1px 6px;
+  background: var(--ie-button-face);
+  color: #000000;
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-shadow);
+  border-bottom: 2px solid var(--ie-shadow);
+  cursor: default;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ie-go-btn:active {
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+}
+
+/* -------------------------------------------------- */
+/* TAB STRIP                                          */
+/* -------------------------------------------------- */
+
+.ie-tabstrip {
+  background: var(--ie-silver);
+  border-bottom: 2px solid var(--ie-shadow);
+  display: flex;
+  align-items: flex-end;
+  padding: 4px 4px 0 4px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ie-tab {
+  font-family: var(--ie-font);
+  font-size: 12px;
+  padding: 4px 14px 6px;
+  background: var(--ie-button-face);
+  color: var(--ie-dk-shadow);
+  border-top:   2px solid var(--ie-highlight);
+  border-left:  2px solid var(--ie-highlight);
+  border-right: 2px solid var(--ie-shadow);
+  border-bottom: none;
+  cursor: default;
+  position: relative;
+  bottom: -2px;
+  white-space: nowrap;
+  transition: none;
+}
+
+.ie-tab:hover:not(.ie-tab-active) {
+  color: #000000;
+  background: #E0DDD5;
+}
+
+.ie-tab-active {
+  background: var(--ie-content-bg);
+  color: #000000;
+  font-weight: bold;
+  border-bottom: 2px solid var(--ie-content-bg);
+  z-index: 2;
+  bottom: -2px;
+}
+
+/* -------------------------------------------------- */
+/* LOADING BAR                                        */
+/* -------------------------------------------------- */
+
+.ie-loadingbar-wrap {
+  height: 4px;
+  background: var(--ie-button-face);
+  border-bottom: 1px solid var(--ie-shadow);
+  flex-shrink: 0;
+}
+
+.ie-loadingbar-fill {
+  height: 100%;
+  background: #000080;
+  transition: width 60ms linear;
+}
+
+/* -------------------------------------------------- */
+/* CONTENT PANE                                       */
+/* -------------------------------------------------- */
+
+.ie-content-pane {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: var(--ie-content-bg);
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+  position: relative;
+}
+
+/* Classic Win98 scrollbar */
+.ie-content-pane::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+
+.ie-content-pane::-webkit-scrollbar-track {
+  background: var(--ie-silver);
+}
+
+.ie-content-pane::-webkit-scrollbar-thumb {
+  background: var(--ie-button-face);
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-shadow);
+  border-bottom: 2px solid var(--ie-shadow);
+}
+
+.ie-content-pane::-webkit-scrollbar-button {
+  background: var(--ie-button-face);
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-shadow);
+  border-bottom: 2px solid var(--ie-shadow);
+  height: 17px;
+  width: 17px;
+  display: block;
+}
+
+/* -------------------------------------------------- */
+/* STATUS BAR                                         */
+/* -------------------------------------------------- */
+
+.ie-statusbar {
+  background: var(--ie-button-face);
+  border-top: 1px solid var(--ie-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 4px;
+  font-family: var(--ie-font);
+  font-size: 11px;
+  flex-shrink: 0;
+  gap: 4px;
+}
+
+.ie-statusbar-panel {
+  border-top:    1px solid var(--ie-shadow);
+  border-left:   1px solid var(--ie-shadow);
+  border-right:  1px solid var(--ie-highlight);
+  border-bottom: 1px solid var(--ie-highlight);
+  padding: 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ie-statusbar-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ie-statusbar-zone {
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------- */
+/* GENERIC IE BUTTONS AND INPUTS                      */
+/* -------------------------------------------------- */
+
+.ie-button {
+  font-family: var(--ie-font);
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--ie-button-face);
+  color: #000000;
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-shadow);
+  border-bottom: 2px solid var(--ie-shadow);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.ie-button:active {
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+}
+
+.ie-button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -3px;
+}
+
+.ie-input {
+  font-family: var(--ie-font);
+  font-size: 12px;
+  background: #FFFFFF;
+  color: #000000;
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+  padding: 2px 4px;
+  outline: none;
+}
+
+.ie-input:focus {
+  border-color: #000080;
+}
+
+.ie-raised-panel {
+  background: var(--ie-button-face);
+  border-top:    1px solid var(--ie-highlight);
+  border-left:   1px solid var(--ie-highlight);
+  border-right:  1px solid var(--ie-shadow);
+  border-bottom: 1px solid var(--ie-shadow);
+}
+
+.ie-sunken-panel {
+  background: #FFFFFF;
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+}
+
+/* -------------------------------------------------- */
+/* IE LINKS (inside content pane)                     */
+/* -------------------------------------------------- */
+
+.ie-content-pane a,
+.ie-link {
+  color: var(--ie-link);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: var(--ie-font);
+}
+
+.ie-content-pane a:visited,
+.ie-link:visited {
+  color: var(--ie-visited);
+}
+
+.ie-content-pane a:hover,
+.ie-link:hover {
+  color: #FF0000;
+}
+
+/* -------------------------------------------------- */
+/* PROGRESS BAR (loading indicator inside content)    */
+/* -------------------------------------------------- */
+
+.ie-progress-track {
+  background: var(--ie-button-face);
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+  height: 16px;
+  padding: 1px;
+}
+
+.ie-progress-fill {
+  background: #000080;
+  height: 100%;
+  transition: width 100ms linear;
+}
+
+/* -------------------------------------------------- */
+/* IE INNER SUB-TABS (for Skills dialog)              */
+/* -------------------------------------------------- */
+
+.ie-subtabstrip {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--ie-shadow);
+  gap: 2px;
+  padding: 0;
+}
+
+.ie-skills-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.ie-skills-layout .ie-subtabstrip {
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: none;
+  border-right: 2px solid var(--ie-shadow);
+  gap: 0;
+  min-width: 0;
+}
+
+.ie-skills-layout .ie-subtab {
+  bottom: 0;
+  border-bottom: 2px solid var(--ie-shadow);
+  border-right: none;
+  padding: 6px 10px;
+  white-space: normal;
+}
+
+.ie-skills-layout .ie-subtab-active {
+  border-right: 2px solid #FFFFFF;
+  margin-right: -2px;
+}
+
+.ie-skills-layout .ie-dialog-content {
+  min-width: 0;
+}
+
+.ie-subtab {
+  font-family: var(--ie-font);
+  font-size: 11px;
+  padding: 3px 12px 5px;
+  background: var(--ie-button-face);
+  color: var(--ie-dk-shadow);
+  border-top:   2px solid var(--ie-highlight);
+  border-left:  2px solid var(--ie-highlight);
+  border-right: 2px solid var(--ie-shadow);
+  border-bottom: none;
+  cursor: default;
+  position: relative;
+  bottom: -2px;
+  white-space: nowrap;
+}
+
+.ie-subtab:hover:not(.ie-subtab-active) {
+  color: #000000;
+}
+
+.ie-subtab-active {
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: bold;
+  border-bottom: 2px solid #FFFFFF;
+  z-index: 1;
+}
+
+.ie-dialog-content {
+  background: #FFFFFF;
+  border-top:    2px solid var(--ie-shadow);
+  border-left:   2px solid var(--ie-shadow);
+  border-right:  2px solid var(--ie-highlight);
+  border-bottom: 2px solid var(--ie-highlight);
+  padding: 12px;
+}
+
+/* -------------------------------------------------- */
+/* SKILL ITEM (System Properties icon grid)           */
+/* -------------------------------------------------- */
+
+.ie-skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84px;
+  padding: 5px;
+  font-family: var(--ie-font);
+  font-size: 11px;
+  text-align: center;
+  cursor: default;
+  border: 1px solid transparent;
+}
+
+.ie-skill-item:hover {
+  background: #000080;
+  color: #FFFFFF;
+  border: 1px dotted var(--ie-highlight);
+}
+
+.ie-skill-item:hover svg {
+  filter: brightness(10);
+}
+
+/* -------------------------------------------------- */
+/* TOOLTIP / DIALOG POPUP                             */
+/* -------------------------------------------------- */
+
+.ie-tooltip {
+  position: absolute;
+  background: var(--ie-button-face);
+  border-top:    2px solid var(--ie-highlight);
+  border-left:   2px solid var(--ie-highlight);
+  border-right:  2px solid var(--ie-dk-shadow);
+  border-bottom: 2px solid var(--ie-dk-shadow);
+  z-index: 100;
+  min-width: 140px;
+  font-family: var(--ie-font);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.ie-tooltip-titlebar {
+  background: linear-gradient(90deg, var(--ie-title-start), var(--ie-title-end));
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
+.ie-tooltip-body {
+  padding: 6px 8px;
+}
+
+/* -------------------------------------------------- */
+/* UNDER CONSTRUCTION ANIMATED BADGE                  */
+/* -------------------------------------------------- */
+
+@keyframes ie-construction-flash {
+  0%, 100% { background: #FFD700; color: #000000; }
+  50%       { background: #000000; color: #FFD700; }
+}
+
+.ie-construction-badge {
+  display: inline-block;
+  font-family: var(--ie-font);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border: 2px outset var(--ie-highlight);
+  animation: ie-construction-flash 0.8s step-end infinite;
+  cursor: default;
+}
+
+/* -------------------------------------------------- */
+/* VISITOR COUNTER BADGE                              */
+/* -------------------------------------------------- */
+
+.ie-counter {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  background: #000000;
+  color: #FF0000;
+  padding: 2px 6px;
+  border: 2px inset var(--ie-shadow);
+  letter-spacing: 3px;
+}
+
+/* -------------------------------------------------- */
+/* OUTLOOK EXPRESS TOOLBAR                            */
+/* -------------------------------------------------- */
+
+.ie-oe-toolbar {
+  background: var(--ie-button-face);
+  border-bottom: 1px solid var(--ie-shadow);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+}
+
+/* -------------------------------------------------- */
+/* DIRECTORY LISTING TABLE                            */
+/* -------------------------------------------------- */
+
+.ie-dir-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ie-font);
+  font-size: 13px;
+}
+
+.ie-dir-table th {
+  background: #000080;
+  color: #FFFFFF;
+  padding: 4px 8px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 12px;
+  border-right: 1px solid var(--ie-shadow);
+  cursor: default;
+  user-select: none;
+}
+
+.ie-dir-table th:hover {
+  background: #0000AA;
+}
+
+.ie-dir-table td {
+  padding: 3px 8px;
+  border-bottom: 1px solid #EEEEEE;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.ie-dir-row-even {
+  background: #FFFFFF;
+}
+
+.ie-dir-row-odd {
+  background: #F5F5F5;
+}
+
+.ie-dir-row-selected {
+  background: #000080 !important;
+  color: #FFFFFF !important;
+}
+
+.ie-dir-row-selected a,
+.ie-dir-row-selected .ie-link {
+  color: #FFFFFF !important;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE: collapse toolbar/menubar on mobile     */
+/* -------------------------------------------------- */
+
+/* -------------------------------------------------- */
+/* ABOUT PAGE — responsive two-column layout          */
+/* -------------------------------------------------- */
+
+.ie-about-cols {
+  flex-direction: row;
+}
+
+/* -------------------------------------------------- */
+/* PROJECT CARDS — responsive image layout            */
+/* -------------------------------------------------- */
+
+.ie-project-body {
+  flex-direction: row;
+}
+
+.ie-project-img-wrap {
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .ie-toolbar,
+  .ie-menubar {
+    display: none;
+  }
+
+  .ie-addressbar-label {
+    display: none;
+  }
+
+  .ie-tab {
+    padding: 4px 8px 6px;
+    font-size: 11px;
+  }
+
+  .ie-titlebar-text {
+    font-size: 10px;
+  }
+
+  /* About: stack sidebar below content on mobile */
+  .ie-about-cols {
+    flex-direction: column;
+  }
+
+  .ie-about-cols > div:first-child {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 12px !important;
+  }
+
+  .ie-about-last-updated {
+    display: none;
+  }
+
+  /* Projects: image goes full-width on top, content below */
+  .ie-project-body {
+    flex-direction: column;
+  }
+
+  .ie-project-img-wrap {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #C0C0C0;
+    height: clamp(180px, 42vw, 260px);
+  }
+
+  .ie-project-img-wrap img {
+    height: clamp(180px, 42vw, 260px) !important;
+  }
+
+  /* Skills: smaller items, wrapping sub-tabs */
+  .ie-skill-item {
+    width: 68px;
+    font-size: 10px;
+  }
+
+  .ie-subtabstrip {
+    flex-wrap: wrap;
+  }
+
+  .ie-subtab {
+    font-size: 10px;
+    padding: 3px 8px 5px;
+  }
+
+  .ie-skills-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .ie-skills-layout .ie-subtabstrip {
+    border-right: none;
+    border-bottom: 2px solid var(--ie-shadow);
+  }
+
+  .ie-skills-layout .ie-subtab {
+    border-right: 2px solid var(--ie-shadow);
+    border-bottom: none;
+  }
+
+  .ie-skills-layout .ie-subtab-active {
+    border-right: 2px solid var(--ie-shadow);
+    border-bottom: 2px solid #FFFFFF;
+    margin-right: 0;
+    margin-bottom: -2px;
+  }
+
+  /* Contact: hide description column on narrow screens */
+  .ie-contact-desc {
+    display: none;
+  }
+
+  /* Prevent horizontal overflow inside content pane on mobile */
+  .ie-content-pane > * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Projects: full-width cards */
+  .ie-content-pane table {
+    word-break: break-word;
+  }
+}
