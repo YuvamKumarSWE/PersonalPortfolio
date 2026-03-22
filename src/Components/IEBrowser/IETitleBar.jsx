@@ -13,8 +13,8 @@ export default function IETitleBar({ activeTabLabel }) {
       </div>
       <span className="ie-titlebar-text">
         {activeTabLabel
-          ? `${activeTabLabel} - Yuvam Kumar - Microsoft Internet Explorer`
-          : 'Yuvam Kumar - Microsoft Internet Explorer'}
+          ? `${activeTabLabel} - Yuvam Kumar`
+          : 'Yuvam Kumar'}
       </span>
       <div className="ie-titlebar-controls">
         <button className="ie-titlebar-btn" title="Minimize" aria-label="Minimize">─</button>
