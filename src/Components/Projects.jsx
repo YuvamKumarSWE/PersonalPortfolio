@@ -11,30 +11,30 @@ export default function Projects() {
             id: 1,
             img: "/images/studyforge.png",
             title: "StudyForgeAI",
-            description: "A sophisticated AI-powered educational platform that revolutionizes how students and professionals synthesize knowledge from diverse information sources. Leverages cutting-edge natural language processing and Google's Gemini 2.5 Flash Lite AI model to automatically generate comprehensive, well-structured study guides from PDFs, web articles, YouTube videos, and raw text inputs—all through an elegant, modern web interface.",
+            description: "Engineered a multi-agent LangGraph orchestration pipeline with 6 specialized agents processing 4 input types in parallel. Reduced LLM API costs by consolidating study guide synthesis into a single Gemini call with 3-tier adaptive prompting. Won a $2,100 hackathon prize delivering a full-stack app with FastAPI, and hybrid PostgreSQL/MongoDB storage.",
             github: "https://github.com/YuvamKumarSWE/StudyForgeAI",
             deployed: "https://devpost.com/software/csgh5?_gl=1*3pyw0a*_gcl_au*NzQ2NTcyMzk5LjE3NjMwOTY3NDI.*_ga*MjAxMzg5NjM2Ni4xNzYzMDk2NzQy*_ga_0YHJK3Y10M*czE3NjU2ODI3ODUkbzIwJGcxJHQxNzY1NjgyNzg5JGo1NiRsMCRoMA..",
-            technologies: ["React", "Java", "Spring Boot", "Python", "LangChain", "MongoDB", "PostgreSQL", "Docker"],
+            technologies: ["Python", "Spring Boot", "LangGraph", "FastAPI", "Docker", "PostgreSQL", "MongoDB", "Google Gemini"],
             status: "Completed"
         },
         {
             id: 2,
             img: "/images/f1.png",
             title: "F1 Fantasy League",
-            description: "Engineered a full-stack F1 Fantasy League platform using the MERN stack and TypeScript, enabling real-time user interactions, dynamic leaderboards, and seamless team management. Designed and implemented robust RESTful APIs in Node.js and Express for secure authentication and scalable backend infrastructure. Integrated advanced data visualization and responsive React UI components for an engaging fantasy team selection experience across devices.",
+            description: "Built a full-stack F1 fantasy platform with JWT auth, budget-constrained drafting, and captain 2x scoring using F1 data. Automated race-result processing via a cron pipeline calculating points with position/DNF modifiers across 20+ races. Integrated a context-aware AI chatbot, injecting race data, driver costs, standings, and teams with 83–100% test coverage.",
             github: "https://github.com/YuvamKumarSWE/F1FantasyLeague",
             deployed: "https://ykf1-fantasy.vercel.app/",
-            technologies: ["TypeScript", "Node.js", "React", "MongoDB", "Express", "MERN"],
+            technologies: ["TypeScript", "Node.js", "React", "MongoDB", "Express", "Redis", "Google Gemini"],
             status: "Live"
         },
         {
             id: 3,
             img: "/images/HireSignal.png",
             title: "HireSignal",
-            description: "An AI-powered interview preparation platform that uses Google Gemini and ElevenLabs to conduct realistic voice/text interviews. It generates role-specific questions, evaluates responses in real-time, and provides actionable feedback with an offer likelihood score to help candidates improve.",
+            description: "Built a real-time AI simulator using Gemini for role-tailored questions; deployed via Docker on AWS EC2 behind Nginx. Designed a multimodal voice pipeline integrating ElevenLabs, converting audio to transcribed answers over WebSockets. Automated CI/CD and monitored container health, latency, and uptime using Prometheus and Grafana dashboards.",
             github: "https://github.com/yeyeyeen/HireSignal",
             deployed: "https://devpost.com/software/hiresignal",
-            technologies: ["React", "Node.js", "Express", "Gemini AI", "ElevenLabs", "Tailwind CSS"],
+            technologies: ["React", "Node.js", "Express", "Gemini AI", "ElevenLabs", "AWS EC2", "Docker", "Nginx", "Prometheus", "Grafana"],
             status: "Completed"
         },
         {
