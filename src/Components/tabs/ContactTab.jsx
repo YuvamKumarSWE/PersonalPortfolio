@@ -197,7 +197,7 @@ export default function ContactTab() {
               <td style={{ fontWeight: 'bold', color: '#555' }}>Resume:</td>
               <td>
                 <a
-                  href="https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing"
+                  href="https://docs.google.com/document/d/1W0OPxAc82DQ6vQ6djhJdS4bhFtV7JbN7/edit?usp=sharing&ouid=116903424471273577317&rtpof=true&sd=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: '#0000EE' }}

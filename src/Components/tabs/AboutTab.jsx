@@ -114,7 +114,7 @@ export default function AboutTab() {
           <hr style={{ margin: '12px 0' }} />
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <a href="https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://docs.google.com/document/d/1W0OPxAc82DQ6vQ6djhJdS4bhFtV7JbN7/edit?usp=sharing&ouid=116903424471273577317&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
               <button className="ie-button" style={{ fontSize: 12 }}>📄 View Resume (PDF)</button>
             </a>
             <a href="mailto:yuvamk.swe@gmail.com">

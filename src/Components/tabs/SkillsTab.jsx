@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { VscVscode } from 'react-icons/vsc';
-import { FaJava, FaReact, FaGitAlt, FaDocker, FaNode, FaAws, FaLinux, FaBootstrap, FaGithub } from 'react-icons/fa';
+import { FaJava, FaReact, FaGitAlt, FaDocker, FaNode, FaAws, FaLinux, FaBootstrap, FaGithub, FaRobot } from 'react-icons/fa';
 import { IoLogoPython, IoLogoFirebase, IoLogoJavascript } from 'react-icons/io5';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import {
@@ -10,7 +10,8 @@ import {
   SiSpringsecurity, SiLangchain, SiMysql, SiSupabase,
   SiApachemaven, SiJira, SiHuggingface, SiNumpy,
   SiPandas, SiScikitlearn, SiSelenium, SiJunit5,
-  SiGithubactions
+  SiGithubactions, SiNextdotjs, SiNginx, SiPrometheus,
+  SiGrafana, SiRedis, SiGithubcopilot
 } from 'react-icons/si';
 import { BiLogoPostgresql } from 'react-icons/bi';
 import { TbSql } from 'react-icons/tb';
@@ -45,6 +46,7 @@ const skillCategories = [
       { skill: 'Spring Data JPA', Icon: SiSpring },
       { skill: 'LangChain', Icon: SiLangchain },
       { skill: 'LangGraph', Icon: SiLangchain },
+      { skill: 'Next.js', Icon: SiNextdotjs },
       { skill: 'Hugging Face', Icon: SiHuggingface },
       { skill: 'NumPy', Icon: SiNumpy },
       { skill: 'Pandas', Icon: SiPandas },
@@ -78,6 +80,12 @@ const skillCategories = [
       { skill: 'AWS', Icon: FaAws },
       { skill: 'Docker', Icon: FaDocker },
       { skill: 'Maven', Icon: SiApachemaven },
+      { skill: 'Nginx', Icon: SiNginx },
+      { skill: 'Prometheus', Icon: SiPrometheus },
+      { skill: 'Grafana', Icon: SiGrafana },
+      { skill: 'Redis', Icon: SiRedis },
+      { skill: 'Claude Code', Icon: FaRobot },
+      { skill: 'Copilot', Icon: SiGithubcopilot },
       { skill: 'Postman', Icon: SiPostman },
       { skill: 'VS Code', Icon: VscVscode },
       { skill: 'Jira (Agile)', Icon: SiJira },

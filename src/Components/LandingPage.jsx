@@ -310,7 +310,7 @@ export default function LandingPage() {
               GET IN TOUCH
             </motion.a>
             <motion.a
-              href="https://drive.google.com/file/d/1TTAAmm-GkSXFrVPD64hHAJRL4WwiOIHE/view?usp=sharing"
+              href="https://docs.google.com/document/d/1W0OPxAc82DQ6vQ6djhJdS4bhFtV7JbN7/edit?usp=sharing&ouid=116903424471273577317&rtpof=true&sd=true"
               target="_blank" rel="noopener noreferrer"
               whileHover={{ x: -2, y: -2 }}
               whileTap={{ scale: 0.97 }}
