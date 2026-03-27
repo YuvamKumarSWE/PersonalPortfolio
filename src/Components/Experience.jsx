@@ -8,14 +8,15 @@ export default function Experience() {
             id: 1,
             company: "Royal Bank of Canada",
             position: "Software Developer Intern",
-            duration: "Sept 2025 – Dec 2025",
+            duration: "Sep 2025 – Dec 2025",
             location: "Toronto, ON",
             description: [
-                "Engineered secure file download Spring Boot features using AWS S3 for 1000+ clients with role-based permission validation and optimizing retrieval logic to reduce average zip download time by 45%.",
-                "Expanded the Spring Boot backend and MySQL database to support 20 new wire-payment fields and built a MongoDB module for customer interest data with REST endpoints, ensuring system stability.",
-                "Refactored old presentation logic and introduced new UI components to improve payment activity rendering, resulting in cleaner architecture and improved maintainability."
+                "Reduced ZIP download time 45% for 1,000+ clients by optimizing file-transfer logic in Java Spring Boot with AWS S3.",
+                "Developed an interest statement data API using Spring Boot and MongoDB, enabling retrieval of financial records.",
+                "Extended MySQL schema and built a validated REST API supporting 20 new wire-payment fields, enforcing transactional integrity across payment processing.",
+                "Built a modular Angular component for payment activity rendering and refactored legacy code to modern standards, resolving platform-wide UI issues and raising test coverage to 90%+."
             ],
-            technologies: ["Spring Boot", "AWS S3", "MySQL", "MongoDB", "REST APIs", "Java"],
+            technologies: ["Spring Boot", "AWS S3", "MySQL", "MongoDB", "REST APIs", "Java", "Angular"],
             accent: "#D946EF",
         },
         {
@@ -25,22 +26,23 @@ export default function Experience() {
             duration: "Jan 2025 – Aug 2025",
             location: "Vancouver, BC",
             description: [
-                "Designed and deployed a full-stack Python video platform that automated strategic video trimming and reduced content duration by 75%, while significantly optimizing flicker between clips to improve video quality.",
-                "Improved Nvidia ASR transcription by adding multi-threading, applying an efficient chunking strategy, and reducing model spin-up time, cutting transcription time by 30%.",
-                "Contributed to setting up multiple microservices and deployed ML services on Hugging Face Spaces with Gradio, enabling efficient real-time access for users."
+                "Built an AI video highlight pipeline using Google Gemini and NVIDIA NeMo ASR, reducing content length by 75%.",
+                "Cut transcription time by over 60% through parallel audio processing and GPU optimization.",
+                "Architected an async video processing API with webhook-based job tracking, supporting up to 10 concurrent jobs.",
+                "Shipped a full-stack platform with Python, TypeScript frontend, and cloud video delivery, presenting demos to companies."
             ],
-            technologies: ["Python", "Nvidia ASR", "Multi-threading", "Gradio", "Hugging Face Spaces", "Microservices"],
+            technologies: ["Python", "TypeScript", "Google Gemini", "NVIDIA NeMo ASR", "Webhooks", "Async APIs"],
             accent: "#0891B2",
         },
         {
             id: 3,
             company: "Collin College",
             position: "Math Research Assistant",
-            duration: "Sept 2023 – May 2024",
+            duration: "Sep 2023 – Apr 2024",
             location: "Frisco, TX",
             description: [
-                "Achieved 99% accuracy in calculus simulation model validation using computational methods, with resulting visual tools adopted by 200+ students.",
-                "Produced high-accuracy models using AutoCAD and simulation software, and presented research findings at an academic conference to advance adoption of technological teaching aids."
+                "Validated calculus models against 3D-printed simulations, achieving 99% theoretical-to-real accuracy.",
+                "Produced AutoCAD simulations adopted as learning tools by 200+ students."
             ],
             technologies: ["Computational Methods", "AutoCAD", "Simulation Software", "Research", "Data Visualization"],
             accent: "#CA8A04",
