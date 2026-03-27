@@ -104,12 +104,9 @@ export default function AboutTab() {
 
           <p style={{ fontSize: 13, lineHeight: 1.6, marginBottom: 8 }}>
             I&apos;m a Computer Science student at UBC and a passionate Software Developer with experience
-            in full-stack development, AI/ML, and cloud infrastructure.
+            in full-stack development, AI/ML, and DevOps.
           </p>
-          <p style={{ fontSize: 13, lineHeight: 1.6, marginBottom: 8 }}>
-            I have worked at <strong>Royal Bank of Canada</strong> as a Software Developer Intern,
-            building enterprise-grade Spring Boot. I at <strong>UBC Applied Machine Learning and Arts</strong>.
-          </p>
+        
 
           <hr style={{ margin: '12px 0' }} />
 
